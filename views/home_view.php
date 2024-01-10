@@ -7,7 +7,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <title>HOME</title>
 </head>
-<body>
+<body class="bg-gray-900">
     
 <header class="z-40 py-4  bg-gray-800  ">
                 <div class="flex items-center justify-between h-8 px-6 mx-auto">
@@ -35,7 +35,7 @@
                     </div>
                     <!-- user -->
                     <div class=" hidden md:flex">
-                        <a href="index.php?page=" class="py-2 px-4 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75">
+                        <a id="openPopup" class="py-2 px-4 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75">
                         Add Blog
                         </a>
                         <a href="index.php?page=register" class=" ml-1 py-2 px-4 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75">
@@ -52,10 +52,10 @@
             <div class="w-screen h-auto bg-gray-900 md:flex md:flex-col  md:justify-center md:items-center gap-2 p-3">
             <h1 class="text-white font-bold border border-cyan-800 opacity-25 rounded-xl px-4 py-1 ">CATEGORY</h1>
             <div class="w-screen h-auto md:flex grid grid-cols-3 md:justify-evenly md:items-center gap-2 p-3">
-                <a hfer="#" class="w-20 border border-red-500 h-20 rounded-xl bg-red-200 flex justify-center items-center">voiture</a>
-                <a hfer="#" class="w-20 border border-red-500 h-20 rounded-xl bg-red-200 flex justify-center items-center">homes  </a>
-                <a hfer="#" class="w-20 border border-red-500 h-20 rounded-xl bg-red-200 flex justify-center items-center">voiture</a>
-                <a hfer="#" class="w-20 border border-red-500 h-20 rounded-xl bg-red-200 flex justify-center items-center">homes  </a>
+                <a hfer="#" class="w-24 border-2 border-gray-800 h-12 rounded-xl text-white flex justify-center font-bold py-1 items-center">IPHONE</a>
+                <a hfer="#" class="w-24 border-2 border-gray-800 h-12 rounded-xl text-white flex justify-center font-bold py-1 items-center">SAMSUNG</a>
+                <a hfer="#" class="w-24 border-2 border-gray-800 h-12 rounded-xl text-white flex justify-center font-bold py-1 items-center">TESLA</a>
+                <a hfer="#" class="w-24 border-2 border-gray-800 h-12 rounded-xl text-white flex justify-center font-bold py-1 items-center">GOOGLE  </a>
             </div>
             </div>
             
@@ -87,37 +87,14 @@
             </div>
 
 
-            <!-- ajoute wiki pop up -->
-            <div id="popupContainer" class="fixed top-0 left-0 w-full h-full bg-gray-800 bg-opacity-50 pt-14 hidden">
-
-                <div  class="container mx-auto mt-8 p-4 bg-gray-200 shadow-lg max-w-md rounded-md">
-
-                    <h2 class="text-2xl font-bold mb-4 text-center">Add Blog</h2>
-                    <form id="blogForm">
-
-                        <div class="mb-4">
-                            <label for="title" class="block text-gray-700 text-sm font-bold mb-2">Title</label>
-                            <input type="text" id="title" name="title" placeholder="Enter blog title"
-                                class="w-full px-3 py-2 border rounded-md text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
-                        </div>
-
-                        <div class="mb-4">
-                            <label for="description" class="block text-gray-700 text-sm font-bold mb-2">Description</label>
-                            <textarea id="description" name="description" rows="4" placeholder="Enter blog description"
-                                class="w-full px-3 py-2 border rounded-md text-gray-700 leading-tight focus:outline-none focus:shadow-outline"></textarea>
-                        </div>
-
-                        <button type="button"
-                            class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
-                            Add Blog
-                        </button>
-
-                    </form>
-
-                </div>
-            </div>
 
 
+
+
+
+
+
+            <!-- display wiki -->
 
             <section class="text-gray-400 bg-gray-900 body-font">
                 <div class="container px-5 py-24 mx-auto">
@@ -185,8 +162,9 @@
 
 
 
-    
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+            <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
     <script>
         $(document).ready(function () {
 
@@ -202,6 +180,7 @@
         });
 
         });
+
 
     //   $(document).ready(function () {
     //     $("#search").keyup(function (e) { 

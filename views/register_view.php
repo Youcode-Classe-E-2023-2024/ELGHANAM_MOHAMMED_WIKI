@@ -15,31 +15,33 @@
     <div class="bg-white shadow w-full rounded-lg divide-y divide-gray-200">
 
         <form id="loginForm"  action="index.php?page=login"  method="POST" class="px-5 py-7">
+            <div class="mb-5 flex flex-col">
+                <label class="font-semibold text-sm text-gray-600 pb-1 block">E-mail</label>
+                <input id="email" type="text" name="email" class="border rounded-lg px-3 py-2 mt-1  text-sm w-full" placeholder="entre email"/>
+                <span id="emailError" class="text-red-500 ">emailError*</span>
+            </div>
 
-            <label class="font-semibold text-sm text-gray-600 pb-1 block">E-mail</label>
-            <input id="email" type="text" name="email" class="border rounded-lg px-3 py-2 mt-1 mb-5 text-sm w-full" placeholder="entre email"/>
-            <span id="emailError"></span>
-
-            <label class="font-semibold text-sm text-gray-600 pb-1 block">Password</label>
-            <input id="password" type="text" name="password" class="border rounded-lg px-3 py-2 mt-1 mb-5 text-sm w-full"  placeholder="••••••••" />
-            <span id="passwordError"></span>
-
+           <div class="mb-5 flex flex-col">
+                <label class="font-semibold text-sm text-gray-600 pb-1 block">Password</label>
+                <input id="password" type="text" name="password" class="border rounded-lg px-3 py-2 mt-1  text-sm w-full"  placeholder="••••••••" />
+                <span id="passwordError" class="text-red-500 ">passwordError*</span>
+            </div>
             <button type="submit" onclick="loginUser()" name="send" class="transition duration-200 bg-blue-500 hover:bg-blue-600 focus:bg-blue-700 focus:shadow-sm focus:ring-4 focus:ring-blue-500 focus:ring-opacity-50 text-white w-full py-2.5 rounded-lg text-sm shadow-sm hover:shadow-md font-semibold text-center inline-block">
                 log in
             </button>
 
         </form>
 
-      <div class="py-5">
-        <div class="grid grid-cols-2 gap-1">
-          <div class="text-center sm:text-right  whitespace-nowrap">
-            <button onclick="register()" class="transition duration-200 mx-5 px-5 py-4 cursor-pointer font-normal text-sm rounded-lg text-blue-500  hover:bg-blue-100 focus:outline-none focus:bg-gray-200 focus:ring-2 focus:ring-gray-400 focus:ring-opacity-50 ring-inset">
-                sign up
-                
-            </button>
-          </div>
+        <div class="py-5 flex justify-end">
+            <div class="flex justify-end">
+              <div class="text-center sm:text-right  whitespace-nowrap">
+                <button onclick="register()" class="transition duration-200 mx-5 px-5 py-4 cursor-pointer font-normal text-sm rounded-lg text-blue-500  hover:bg-blue-100 focus:outline-none focus:bg-gray-200 focus:ring-2 focus:ring-gray-400 focus:ring-opacity-50 ring-inset">
+                    sign up
+                    
+                </button>
+              </div>
+            </div>
         </div>
-      </div>
     </div>
     
   </div>
@@ -63,14 +65,17 @@
             <div class="mb-4">
                 <label for="fullName" class="block text-gray-700 text-sm font-semibold mb-2">Full Name *</label>
                 <input type="text" name="first_name" id="fullName" class="form-input w-full px-4 py-2 border rounded-lg text-gray-700 focus:ring-blue-500" required placeholder="enter name">
+                <span id="error_name" class="text-red-600">errur name*</span>
             </div>
             <div class="mb-4">
                 <label for="email" class="block text-gray-700 text-sm font-semibold mb-2">Email Address *</label>
                 <input type="email" name="email" id="email" class="form-input w-full px-4 py-2 border rounded-lg text-gray-700 focus:ring-blue-500" required placeholder="entre email">
+                <span id="error_email" class="text-red-600">errur email*</span>
             </div>
             <div class="mb-6">
                 <label for="password" class="block text-gray-700 text-sm font-semibold mb-2">Password *</label>
                 <input type="password" name="password" id="password" class="form-input w-full px-4 py-2 border rounded-lg text-gray-700 focus:ring-blue-500" required placeholder="••••••••">
+                <span id="error_pass" class="text-red-600">errur pass*</span>
                 <p class="text-gray-600 text-xs mt-1">Must contain 1 uppercase letter, 1 number, min. 8 characters.</p>
             </div>
             <button type="submit" name="send" class="w-full bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">Register</button>

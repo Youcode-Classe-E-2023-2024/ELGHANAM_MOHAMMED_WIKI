@@ -86,6 +86,39 @@
                 </div>
             </div>
 
+
+            <!-- ajoute wiki pop up -->
+            <div id="popupContainer" class="fixed top-0 left-0 w-full h-full bg-gray-800 bg-opacity-50 pt-14 hidden">
+
+                <div  class="container mx-auto mt-8 p-4 bg-gray-200 shadow-lg max-w-md rounded-md">
+
+                    <h2 class="text-2xl font-bold mb-4 text-center">Add Blog</h2>
+                    <form id="blogForm">
+
+                        <div class="mb-4">
+                            <label for="title" class="block text-gray-700 text-sm font-bold mb-2">Title</label>
+                            <input type="text" id="title" name="title" placeholder="Enter blog title"
+                                class="w-full px-3 py-2 border rounded-md text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                        </div>
+
+                        <div class="mb-4">
+                            <label for="description" class="block text-gray-700 text-sm font-bold mb-2">Description</label>
+                            <textarea id="description" name="description" rows="4" placeholder="Enter blog description"
+                                class="w-full px-3 py-2 border rounded-md text-gray-700 leading-tight focus:outline-none focus:shadow-outline"></textarea>
+                        </div>
+
+                        <button type="button"
+                            class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+                            Add Blog
+                        </button>
+
+                    </form>
+
+                </div>
+            </div>
+
+
+
             <section class="text-gray-400 bg-gray-900 body-font">
                 <div class="container px-5 py-24 mx-auto">
                   <div class="flex flex-wrap -m-4">
@@ -152,7 +185,24 @@
 
 
 
+    
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
+        $(document).ready(function () {
+
+        // Open pop-up
+        $("#openPopup").click(function () {
+            $("#popupContainer").show();
+        });
+
+        $("#popupContainer").click(function (event) {
+        if (event.target === this) {
+            $(this).hide();
+        }
+        });
+
+        });
+
     //   $(document).ready(function () {
     //     $("#search").keyup(function (e) { 
     //             var input = $(this).val();

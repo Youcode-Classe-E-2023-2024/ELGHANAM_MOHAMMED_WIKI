@@ -27,17 +27,28 @@
 // }
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $first_name = $_POST['first_name']; 
-    $email = $_POST['email_r']; 
-    $password = $_POST['password_r']; 
+    if (isset($_POST['first_name'])) {
+        $first_name = $_POST['first_name']; 
+    }
+
+    if (isset($_POST['email_r'])) {
+        $email = $_POST['email_r']; 
+    }
+
+    if (isset($_POST['password_r'])) {
+        $password = $_POST['password_r'];
+    }
+    
     if (empty($first_name)) {
         return "enter name";
     }
+
     if (empty($email)) {
         return "enter email";
     }elseif (filter_var($email, FILTER_VALIDATE_EMAIL)) {
         return "email incorecct";
     }
+    
     if (empty($password)) {
         return "enter password";
     }

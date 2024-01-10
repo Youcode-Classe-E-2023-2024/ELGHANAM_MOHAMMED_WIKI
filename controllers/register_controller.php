@@ -4,7 +4,7 @@ if (session_status() == PHP_SESSION_NONE) {
 }
 
 
-$OBJECT_CHAT = new CHAT();
+// $OBJECT_CHAT = new CHAT();
 
 
 if (isset($_POST['send'])){

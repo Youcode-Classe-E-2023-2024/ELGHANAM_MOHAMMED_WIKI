@@ -38,7 +38,7 @@
                         <a id="openPopup" class="py-2 px-4 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75">
                         Add Blog
                         </a>
-                        <a href="index.php?page=register" class=" ml-1 py-2 px-4 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75">
+                        <a href="index.php?page=login" class=" ml-1 py-2 px-4 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75">
                           signup 
                         </a>
                         
@@ -51,7 +51,7 @@
             <!-- category -->
             <div class="w-screen h-auto bg-gray-900 md:flex md:flex-col  md:justify-center md:items-center gap-2 p-3">
             <h1 class="text-white font-bold border border-cyan-800 opacity-25 rounded-xl px-4 py-1 ">CATEGORY</h1>
-            <div class="w-screen h-auto md:flex grid grid-cols-3 md:justify-evenly md:items-center gap-2 p-3">
+            <div class="w-screen h-auto md:flex grid grid-cols-3 md:justify-center md:items-center gap-2 p-3">
                 <a hfer="#" class="w-24 border-2 border-gray-800 h-12 rounded-xl text-white flex justify-center font-bold py-1 items-center">IPHONE</a>
                 <a hfer="#" class="w-24 border-2 border-gray-800 h-12 rounded-xl text-white flex justify-center font-bold py-1 items-center">SAMSUNG</a>
                 <a hfer="#" class="w-24 border-2 border-gray-800 h-12 rounded-xl text-white flex justify-center font-bold py-1 items-center">TESLA</a>
@@ -138,7 +138,7 @@
                           <h1 class="title-font text-lg font-medium text-white mb-3">The Catalyzer</h1>
                           <p class="leading-relaxed mb-3">Photo booth fam kinfolk cold-pressed sriracha leggings jianbing microdosing tousled waistcoat.</p>
                           <div class="flex items-center flex-wrap ">
-                            <a href="#" class="text-indigo-400 inline-flex items-center md:mb-2 lg:mb-0 hover:underline underline-offset-2">Learn More
+                            <a href="#" class="text-indigo-400 inline-flex items-center md:mb-2 lg:mb-0 hover:underline underline-offset-2">read More
                               <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
                                 <path d="M5 12h14"></path>
                                 <path d="M12 5l7 7-7 7"></path>
@@ -157,7 +157,7 @@
                           <h1 class="title-font text-lg font-medium text-white mb-3">The 400 Blows</h1>
                           <p class="leading-relaxed mb-3">Photo booth fam kinfolk cold-pressed sriracha leggings jianbing microdosing tousled waistcoat.</p>
                           <div class="flex items-center flex-wrap">
-                            <a href="#" class="text-indigo-400 inline-flex items-center md:mb-2 lg:mb-0 hover:underline underline-offset-2">Learn More
+                            <a href="#" class="text-indigo-400 inline-flex items-center md:mb-2 lg:mb-0 hover:underline underline-offset-2">read More
                               <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
                                 <path d="M5 12h14"></path>
                                 <path d="M12 5l7 7-7 7"></path>
@@ -176,7 +176,7 @@
                           <h1 class="title-font text-lg font-medium text-white mb-3">Shooting Stars</h1>
                           <p class="leading-relaxed mb-3">Photo booth fam kinfolk cold-pressed sriracha leggings jianbing microdosing tousled waistcoat.</p>
                           <div class="flex items-center flex-wrap ">
-                            <a  href=""# class="text-indigo-400 inline-flex items-center md:mb-2 lg:mb-0 hover:underline underline-offset-2">Learn More
+                            <a  href=""# class="text-indigo-400 inline-flex items-center md:mb-2 lg:mb-0 hover:underline underline-offset-2">read More
                               <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
                                 <path d="M5 12h14"></path>
                                 <path d="M12 5l7 7-7 7"></path>

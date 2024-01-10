@@ -11,7 +11,7 @@ include_once '_config/db.php';
 if (isset($_GET['page']) && !empty($_GET['page'])) {
     $page = trim(strtolower($_GET['page']));
 } else {
-    $page = 'register';
+    $page = 'home';
 }
 
 $all_pages = scandir('controllers');

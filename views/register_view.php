@@ -8,51 +8,12 @@
 </head>
 <body>
 
-    <!-- component -->
-<div style="display: block;" class="min-h-screen bg-gray-100 flex flex-col justify-center sm:py-12"id="login">
-  <div class="p-10 xs:p-0 mx-auto md:w-full md:max-w-md">
-    <h1 class="font-bold text-center text-2xl mb-5">Your Logo</h1>  
-    <div class="bg-white shadow w-full rounded-lg divide-y divide-gray-200">
-
-        <form id="loginForm" class="px-5 py-7">
-            <div class="mb-5 flex flex-col">
-                <label class="font-semibold text-sm text-gray-600 pb-1 block">E-mail</label>
-                <input id="email_l" type="text" name="email" class="border rounded-lg px-3 py-2 mt-1  text-sm w-full" placeholder="entre email"/>
-                <span id="emailError" class="text-red-500 "></span>
-            </div>
-
-           <div class="mb-5 flex flex-col">
-                <label class="font-semibold text-sm text-gray-600 pb-1 block">Password</label>
-                <input id="password_l" type="text" name="password" class="border rounded-lg px-3 py-2 mt-1  text-sm w-full"  placeholder="••••••••" />
-                <span id="passwordError" class="text-red-500 "></span>
-            </div>
-            <button type="submit" name="send" class="transition duration-200 bg-blue-500 hover:bg-blue-600 focus:bg-blue-700 focus:shadow-sm focus:ring-4 focus:ring-blue-500 focus:ring-opacity-50 text-white w-full py-2.5 rounded-lg text-sm shadow-sm hover:shadow-md font-semibold text-center inline-block">
-                log in
-            </button>
-
-        </form>
-
-        <div class="py-5 flex justify-end">
-            <div class="flex justify-end">
-              <div class="text-center sm:text-right  whitespace-nowrap">
-                <button onclick="register()" class="transition duration-200 mx-5 px-5 py-4 cursor-pointer font-normal text-sm rounded-lg text-blue-500  hover:bg-blue-100 focus:outline-none focus:bg-gray-200 focus:ring-2 focus:ring-gray-400 focus:ring-opacity-50 ring-inset">
-                    sign up
-                    
-                </button>
-              </div>
-            </div>
-        </div>
-    </div>
-    
-  </div>
-</div>
-
 
 
 
     
     <!-- component -->
-<div style="display: none;" class="bg-gray-100 flex items-center justify-center h-screen" id="register">
+<div  class="bg-gray-100 flex items-center justify-center h-screen" id="register">
     <div class="bg-white p-8 rounded-lg shadow-lg max-w-sm w-full">
         <div class="flex justify-center mb-6">
             <span class="inline-block bg-gray-200 rounded-full p-3">
@@ -81,37 +42,14 @@
             <button type="submit" name="send" value="send" class="w-full bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">Register</button>
             <p class="text-gray-600 text-xs text-center mt-4">
                 By clicking Register, you agree to accept Apex Financial's
-                <a href="#" class="text-blue-500 hover:underline" onclick="login()">back of login</a>.
+                <a href="index.php?page=login" class="text-blue-500 hover:underline" >back of login</a>.
             </p>
         </form>
     </div>
 </div>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
-      function login() {
-        console.log("HELLO");
-        var loginElement = document.getElementById('login');
-        var registerElement = document.getElementById('register');
-      
-          loginElement.style.display = 'flex';
-          registerElement.style.display = 'none';
-        
-    }
-      
-      
-    function register() {
-        console.log("HELLO");
-        var loginElement = document.getElementById('login');
-        var registerElement = document.getElementById('register');
-      
-        
-          loginElement.style.display = 'none';
-          registerElement.style.display = 'flex';
 
-    }
-
-    
-    
     $(document).ready(function () {
         $("#form_data").submit(function (e) {
             e.preventDefault();
@@ -153,37 +91,6 @@
         });
 
 
-        $("#loginForm").submit(function (e) {
-            e.preventDefault();
-
-            // validation login
-            var loginForm = {
-                'email_l': $("#email_l").val(),
-                'password_l': $("#password_l").val()
-            };
-
-
-            $.ajax({
-               type: "post",
-               url: "index.php?page=login",
-               data: loginForm,
-               dataType: "json",
-               success: function (data) {
-                   $("#emailError").text('');
-                   $("#passwordError").text('');
-                   if (data.emailError) {
-                       $("#emailError").text(data.emailError);
-                   }
-                   if (response.passwordError) {
-                       $("#passwordError").text(data.passwordError);
-                   }
-                }
-                //     error: function (error) {
-                //         console.log("login error:",error);
-                //     }
-            });
-
-        });
     });
 
 

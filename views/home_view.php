@@ -34,8 +34,8 @@
                         </div>
                     </div>
                     <!-- user -->
-                    <div class="">
-                        <a href="index.php?page=dashboard" class="py-2 px-4 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75">
+                    <div class=" hidden md:flex">
+                        <a href="index.php?page=" class="py-2 px-4 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75">
                         Add Blog
                         </a>
                         <a href="index.php?page=register" class=" ml-1 py-2 px-4 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75">
@@ -48,39 +48,107 @@
                 </div>
             </header>
 
-<!-- component -->
-<div class="bg-gradient-to-bl from-blue-50 to-violet-50 flex items-center justify-center lg:h-screen">
-    
-      <div class="container h-5/6 mx-auto mx-auto p-4">
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4 gap-4">
-          <!-- Replace this with your grid items -->
-          
-          
-          <?php if ($result) {
-   
-            while ($row = mysqli_fetch_assoc($result)) { ?>
-            <div class="bg-white rounded-lg border p-4">
-              <img src="data:image/jpeg;base64,<?php echo base64_encode($row['blog_image']); ?>" alt="Placeholder Image" class="w-full h-48 rounded-md object-cover">
-              <div class="px-1 py-4">
-                <div class="font-bold text-xl mb-2"><?php echo $row['blog_name'] ?></div>
-                <p class="text-gray-700 text-base">
-                <?php echo $row['blog_description'] ?>
-                </p>
-              </div>
-
+            <!-- category -->
+            <div class="w-screen h-auto bg-gray-900 md:flex md:flex-col  md:justify-center md:items-center gap-2 p-3">
+            <h1 class="text-white font-bold border border-cyan-800 opacity-25 rounded-xl px-4 py-1 ">CATEGORY</h1>
+            <div class="w-screen h-auto md:flex grid grid-cols-3 md:justify-evenly md:items-center gap-2 p-3">
+                <a hfer="#" class="w-20 border border-red-500 h-20 rounded-xl bg-red-200 flex justify-center items-center">voiture</a>
+                <a hfer="#" class="w-20 border border-red-500 h-20 rounded-xl bg-red-200 flex justify-center items-center">homes  </a>
+                <a hfer="#" class="w-20 border border-red-500 h-20 rounded-xl bg-red-200 flex justify-center items-center">voiture</a>
+                <a hfer="#" class="w-20 border border-red-500 h-20 rounded-xl bg-red-200 flex justify-center items-center">homes  </a>
             </div>
-  
-          <?php } } ?>
-  
+            </div>
             
-          
-            
-          
+            <!-- tags -->
+            <div class="md:flex md:flex-col md:justify-center md:items-center p-4  bg-gray-900">
+                <h1 class="text-white font-bold border border-cyan-800 opacity-25 rounded-xl px-4 py-1">TAGS</h1>
+                <div class="md:flex md:justify-center md:items-center p-4 grid grid-cols-3">
+                    <a href="#"
+                        class="bg-green-400 hover:shadow hover:bg-danger transition duration-150 px-2 py-1 rounded text-sm text-white mx-1 my-2">
+                        laravel
+                    </a>
+                    <a href="#"
+                        class="bg-green-400 hover:shadow hover:bg-danger transition duration-150 px-2 py-1 rounded text-sm text-white mx-1 my-2">
+                        livewire
+                    </a>
+                    <a href="#"
+                        class="bg-green-400 hover:shadow hover:bg-danger transition duration-150 px-2 py-1 rounded text-sm text-white mx-1 my-2">
+                        component
+                    </a>
+                    <a href="#"
+                        class="bg-green-400 hover:shadow hover:bg-danger transition duration-150 px-2 py-1 rounded text-sm text-white mx-1 my-2">
+                        snippet
+                    </a>
+                    <a href="#"
+                        class="bg-green-400 hover:shadow hover:bg-danger transition duration-150 px-2 py-1 rounded text-sm text-white mx-1 my-2">
+                        tailwind
+                    </a>
+                </div>
+            </div>
 
-          <!-- Add more items as needed -->
-        </div>
-      </div>
-    </div>
+            <section class="text-gray-400 bg-gray-900 body-font">
+                <div class="container px-5 py-24 mx-auto">
+                  <div class="flex flex-wrap -m-4">
+                    <div class="p-4 md:w-1/3">
+                      <div class="h-full border-2 border-gray-800 rounded-lg overflow-hidden">
+
+                        <div class="p-6">
+
+                          <h1 class="title-font text-lg font-medium text-white mb-3">The Catalyzer</h1>
+                          <p class="leading-relaxed mb-3">Photo booth fam kinfolk cold-pressed sriracha leggings jianbing microdosing tousled waistcoat.</p>
+                          <div class="flex items-center flex-wrap ">
+                            <a href="#" class="text-indigo-400 inline-flex items-center md:mb-2 lg:mb-0 hover:underline underline-offset-2">Learn More
+                              <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M5 12h14"></path>
+                                <path d="M12 5l7 7-7 7"></path>
+                              </svg>
+                            </a>
+
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="p-4 md:w-1/3">
+                      <div class="h-full border-2 border-gray-800 rounded-lg overflow-hidden">
+
+                        <div class="p-6">
+
+                          <h1 class="title-font text-lg font-medium text-white mb-3">The 400 Blows</h1>
+                          <p class="leading-relaxed mb-3">Photo booth fam kinfolk cold-pressed sriracha leggings jianbing microdosing tousled waistcoat.</p>
+                          <div class="flex items-center flex-wrap">
+                            <a href="#" class="text-indigo-400 inline-flex items-center md:mb-2 lg:mb-0 hover:underline underline-offset-2">Learn More
+                              <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M5 12h14"></path>
+                                <path d="M12 5l7 7-7 7"></path>
+                              </svg>
+                            </a>
+
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="p-4 md:w-1/3">
+                      <div class="h-full border-2 border-gray-800 rounded-lg overflow-hidden">
+
+                        <div class="p-6">
+
+                          <h1 class="title-font text-lg font-medium text-white mb-3">Shooting Stars</h1>
+                          <p class="leading-relaxed mb-3">Photo booth fam kinfolk cold-pressed sriracha leggings jianbing microdosing tousled waistcoat.</p>
+                          <div class="flex items-center flex-wrap ">
+                            <a  href=""# class="text-indigo-400 inline-flex items-center md:mb-2 lg:mb-0 hover:underline underline-offset-2">Learn More
+                              <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M5 12h14"></path>
+                                <path d="M12 5l7 7-7 7"></path>
+                              </svg>
+                            </a>
+
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            </section>
 
 
 

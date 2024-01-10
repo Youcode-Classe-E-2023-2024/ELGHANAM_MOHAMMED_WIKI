@@ -105,32 +105,8 @@
     }
 
 
-    function loginUser() {
-    // Reset error messages
-    $("#EmailError, #PasswordError").text("");
 
-    // Get form data
-    var formData = $("#loginForm").serialize();
 
-    // Ajax request
-    $.ajax({
-        type: "POST",
-        url: "index.php?page=login",
-        data: formData,
-        success: function(response) {
-            // Handle the response from the server
-            if (response === "success") {
-                alert("Registration successful!");
-                // You can redirect or perform other actions upon successful registration
-            } else {
-                // Display error messages
-                var errors = JSON.parse(response);
-                if (errors.email) $("#emailError").text(errors.email);
-                if (errors.password) $("#passwordError").text(errors.password);
-            }
-        }
-    });
-}
 
       
 </script>

@@ -86,7 +86,7 @@
                 </div>
             </div>
 
-            
+
 
 
 
@@ -95,6 +95,7 @@
 
 
             <!-- display wiki -->
+
             <section class="text-gray-400 bg-gray-900 body-font">
                 <div class="container px-5 py-24 mx-auto">
                   <div class="flex flex-wrap -m-4">
@@ -160,7 +161,10 @@
             </section>
 
 
+
+
             <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
     <script>
         $(document).ready(function () {
 
@@ -176,8 +180,6 @@
         });
 
         });
-
-
 
 
     //   $(document).ready(function () {

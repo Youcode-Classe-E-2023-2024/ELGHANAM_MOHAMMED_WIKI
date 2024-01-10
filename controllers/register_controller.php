@@ -26,36 +26,29 @@
 
 // }
 
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    if (isset($_POST['first_name'])) {
-        $first_name = $_POST['first_name']; 
-    }
-
-    if (isset($_POST['email_r'])) {
-        $email = $_POST['email_r']; 
-    }
-
-    if (isset($_POST['password_r'])) {
-        $password = $_POST['password_r'];
-    }
+    $response = array();
     
-    if (empty($first_name)) {
-        return "enter name";
+    if (empty($_POST['first_name']) || !htmlspecialchars($_POST['first_name'])) {
+        $response['error_name'] = "Please enter name*";
     }
 
-    if (empty($email)) {
-        return "enter email";
-    }elseif (filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        return "email incorecct";
+    if (empty($_POST['email_r']) || !filter_var($_POST['email_r'], FILTER_VALIDATE_EMAIL)) {
+        $response['error_email'] = "Please enter email*";
     }
-    
-    if (empty($password)) {
-        return "enter password";
+
+    if (empty($_POST['password_r']) || !htmlspecialchars($_POST['password_r'])) {
+        $response['error_password'] = "Please enter password*";
     }
+
+    // Send the JSON response
+    echo json_encode($response);
     exit();
-
 }
 
 
-
 ?>
+
+
+

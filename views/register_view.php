@@ -14,19 +14,19 @@
     <h1 class="font-bold text-center text-2xl mb-5">Your Logo</h1>  
     <div class="bg-white shadow w-full rounded-lg divide-y divide-gray-200">
 
-        <form id="loginForm"  action="index.php?page=login"  method="POST" class="px-5 py-7">
+        <form id="loginForm" class="px-5 py-7">
             <div class="mb-5 flex flex-col">
                 <label class="font-semibold text-sm text-gray-600 pb-1 block">E-mail</label>
-                <input id="email" type="text" name="email" class="border rounded-lg px-3 py-2 mt-1  text-sm w-full" placeholder="entre email"/>
-                <span id="emailError" class="text-red-500 ">emailError*</span>
+                <input id="email_l" type="text" name="email" class="border rounded-lg px-3 py-2 mt-1  text-sm w-full" placeholder="entre email"/>
+                <span id="emailError" class="text-red-500 "></span>
             </div>
 
            <div class="mb-5 flex flex-col">
                 <label class="font-semibold text-sm text-gray-600 pb-1 block">Password</label>
-                <input id="password" type="text" name="password" class="border rounded-lg px-3 py-2 mt-1  text-sm w-full"  placeholder="••••••••" />
-                <span id="passwordError" class="text-red-500 ">passwordError*</span>
+                <input id="password_l" type="text" name="password" class="border rounded-lg px-3 py-2 mt-1  text-sm w-full"  placeholder="••••••••" />
+                <span id="passwordError" class="text-red-500 "></span>
             </div>
-            <button type="submit" onclick="loginUser()" name="send" class="transition duration-200 bg-blue-500 hover:bg-blue-600 focus:bg-blue-700 focus:shadow-sm focus:ring-4 focus:ring-blue-500 focus:ring-opacity-50 text-white w-full py-2.5 rounded-lg text-sm shadow-sm hover:shadow-md font-semibold text-center inline-block">
+            <button type="submit" name="send" class="transition duration-200 bg-blue-500 hover:bg-blue-600 focus:bg-blue-700 focus:shadow-sm focus:ring-4 focus:ring-blue-500 focus:ring-opacity-50 text-white w-full py-2.5 rounded-lg text-sm shadow-sm hover:shadow-md font-semibold text-center inline-block">
                 log in
             </button>
 
@@ -61,24 +61,24 @@
         </div>
         <h2 class="text-2xl font-semibold text-center mb-4">Create a new account</h2>
         <p class="text-gray-600 text-center mb-6">Enter your details to register.</p>
-        <form id="form_data" action="#" method="POST">
+        <form id="form_data" >
             <div class="mb-4">
                 <label for="fullName" class="block text-gray-700 text-sm font-semibold mb-2">Full Name *</label>
                 <input type="text" name="first_name" id="first_name" class="form-input w-full px-4 py-2 border rounded-lg text-gray-700 focus:ring-blue-500" placeholder="enter name">
-                <span id="error_name" class="text-red-600">errur name*</span>
+                <span id="error_name" class="text-red-600"></span>
             </div>
             <div class="mb-4">
                 <label for="email" class="block text-gray-700 text-sm font-semibold mb-2">Email Address *</label>
                 <input type="email" name="email" id="email_r" class="form-input w-full px-4 py-2 border rounded-lg text-gray-700 focus:ring-blue-500" placeholder="entre email">
-                <span id="error_email" class="text-red-600">errur email*</span>
+                <span id="error_email" class="text-red-600"></span>
             </div>
             <div class="mb-6">
                 <label for="password" class="block text-gray-700 text-sm font-semibold mb-2">Password *</label>
                 <input type="password" name="password" id="password_r" class="form-input w-full px-4 py-2 border rounded-lg text-gray-700 focus:ring-blue-500"  placeholder="••••••••">
-                <span id="error_pass" class="text-red-600">errur pass*</span>
+                <span id="error_pass" class="text-red-600"></span>
                 <p class="text-gray-600 text-xs mt-1">Must contain 1 uppercase letter, 1 number, min. 8 characters.</p>
             </div>
-            <button type="submit" name="send" class="w-full bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">Register</button>
+            <button type="submit" name="send" value="send" class="w-full bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">Register</button>
             <p class="text-gray-600 text-xs text-center mt-4">
                 By clicking Register, you agree to accept Apex Financial's
                 <a href="#" class="text-blue-500 hover:underline" onclick="login()">back of login</a>.
@@ -110,28 +110,81 @@
 
     }
 
+    
+    
     $(document).ready(function () {
-        
-        $("#form_data").submit(function (e) { 
+        $("#form_data").submit(function (e) {
             e.preventDefault();
-            var form_data = $('#form_data').serialize();
 
+            // validation register
+            var formData = {
+                'first_name': $("#first_name").val(),
+                'email_r': $("#email_r").val(),
+                'password_r': $("#password_r").val()
+            };
+
+            
             $.ajax({
                 type: "POST",
                 url: "index.php?page=register",
-                data: form_data,
+                data: formData,
+                dataType: "json", 
                 success: function (response) {
-                    console.log(response);
-                },
-                error: function (error) { 
-                    console.log(error);
-                 }
-            });
-            
-        });
-          
-    });
+                    
+                    $("#error_name").text('');
+                    $("#error_email").text('');
+                    $("#error_pass").text('');
 
+                    
+                    if (response.error_name) {
+                        $("#error_name").text(response.error_name);
+                    }
+                    if (response.error_email) {
+                        $("#error_email").text(response.error_email);
+                    }
+                    if (response.error_password) {
+                        $("#error_pass").text(response.error_password);
+                    }
+                },
+                error: function (error) {
+                    console.log(error);
+                }
+            });
+        });
+
+
+        $("#loginForm").submit(function (e) {
+            e.preventDefault();
+
+            // validation login
+            var loginForm = {
+                'email_l': $("#email_l").val(),
+                'password_l': $("#password_l").val()
+            };
+
+
+            $.ajax({
+               type: "post",
+               url: "index.php?page=login",
+               data: loginForm,
+               dataType: "json",
+               success: function (data) {
+                   $("#emailError").text('');
+                   $("#passwordError").text('');
+                   if (data.emailError) {
+                       $("#emailError").text(data.emailError);
+                   }
+                   if (response.passwordError) {
+                       $("#passwordError").text(data.passwordError);
+                   }
+                }
+                //     error: function (error) {
+                //         console.log("login error:",error);
+                //     }
+            });
+
+        });
+    });
 
 
 

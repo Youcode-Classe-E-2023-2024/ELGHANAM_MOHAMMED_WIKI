@@ -68,9 +68,7 @@
                 data: formData,
                 dataType: "json", 
                 success: function (response) {
-
-
-                    
+                  
                     $("#error_name").text('');
                     $("#error_email").text('');
                     $("#error_pass").text('');

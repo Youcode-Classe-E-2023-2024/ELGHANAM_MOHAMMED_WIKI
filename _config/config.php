@@ -24,7 +24,7 @@ define('PATH', substr($_SERVER['PHP_SELF'], 0, -9)); // pour les images et les f
 define('__ROOT__', dirname(dirname(__FILE__)));
 
 /* db info */
-const DB_HOST = 'localhost';
-const DB_NAME = 'ALPHA';
-const DB_USER = 'root';
-const DB_PASS = '';
+$DB_HOST = 'localhost';
+$DB_NAME = 'wiki';
+$DB_USER = 'root';
+$DB_PASS = '';

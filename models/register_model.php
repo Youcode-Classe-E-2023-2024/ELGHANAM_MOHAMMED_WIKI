@@ -5,32 +5,32 @@ class REGISTER{
     public function InsertUser($name, $email, $password, $role){
         global $db;
 
-        hach_password($password);
+        $hach_password = $this->hash_password($password);
 
-        $sql = "INSERT INTO users (first_name, email, password) VALUE (:name, :email, :password, :role)";
+        $sql = "INSERT INTO users (first_name, email, password, role) VALUE (:name, :email, :password, :role)";
 
-        $stmt = $db->prepar($sql);
+        $stmt = $db->prepare($sql);
         $stmt->bindParam(':name', $name);
         $stmt->bindParam(':email', $email);
-        $stmt->bindParam(':password', $password);
+        $stmt->bindParam(':password', $hach_password);
         $stmt->bindParam(':role', $role);
         $stmt->execute();
 
         return true;
     }
 
-    public function hach_password($password){
-        $hach = sha1($password);
+    public function hash_password($password){
+        $hach = password_hash($password, PASSWORD_BCRYPT);
         return $hach;
     }
 
-    public function CountRow(){
+    public function rowCount(){
         global $db;
 
         $sql = "SELECT * FROM users";
-        $stmt = $db->prepar($sql);
+        $stmt = $db->prepare($sql);
         $stmt->execute();
-        $count_row = $stmt->CountRow();
+        $nember_row = $stmt->rowCount();
 
         return $nember_row;       
     }

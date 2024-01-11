@@ -25,7 +25,7 @@
         <form id="form_data" >
             <div class="mb-4">
                 <label for="fullName" class="block text-gray-700 text-sm font-semibold mb-2">Full Name *</label>
-                <input type="text" name="first_name" id="first_name" class="form-input w-full px-4 py-2 border rounded-lg text-gray-700 focus:ring-blue-500" placeholder="enter name">
+                <input type="text" name="name" id="first_name" class="form-input w-full px-4 py-2 border rounded-lg text-gray-700 focus:ring-blue-500" placeholder="enter name">
                 <span id="error_name" class="text-red-600"></span>
             </div>
             <div class="mb-4">

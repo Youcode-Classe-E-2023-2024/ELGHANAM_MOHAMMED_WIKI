@@ -17,12 +17,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Send the JSON response
     echo json_encode($response);
-    exit();
+    
 
     if (empty($response)) {
         $objet_register = new REGISTER();
 
-        $nember_row = $objet_register->CountRow();
+        $nember_row = $objet_register->rowCount();
 
         if ($nember_row <= 0) {
             $role = "admin";
@@ -36,12 +36,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         $_SESSION['name'] = $name;   
         $_SESSION['email'] = $email;
-        $_SESSION['password'] = $password; 
+        $_SESSION['password'] = $password;
+        $_SESSION['role'] = $role; 
         
         $result = $objet_register->InsertUser($name, $email, $password, $role);
+        if ($result) {
+            echo"dakhlat";
+        }
        
  
     }
+    exit();
 }
 
 

@@ -68,7 +68,7 @@
                 data: formData,
                 dataType: "json", 
                 success: function (response) {
-                    console.log("helllll");
+                  
                     $("#error_name").text('');
                     $("#error_email").text('');
                     $("#error_pass").text('');
@@ -83,6 +83,11 @@
                     if (response.error_password) {
                         $("#error_pass").text(response.error_password);
                     }
+
+                    $("#first_name").val(''),
+                    $("#email_r").val(''),
+                    $("#password_r").val('')
+                    
                 },
                 error: function (error) {
                     console.log(error);

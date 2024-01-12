@@ -69,7 +69,7 @@ $("#loginForm").submit(function (event) {
                 data: loginForm,
                 dataType: "json",
                 success: function (data) {
-                //    console.log(data);
+                    //  console.log(data.true_home);
 
                    $("#emailError").text('');
                    $("#passwordError").text('');
@@ -79,6 +79,14 @@ $("#loginForm").submit(function (event) {
                    if (data.passwordError) {
                        $("#passwordError").text(data.passwordError);
                    }
+
+                    if (data.true_dashboard) {
+                        window.location.href = "index.php?page=dashboard";
+                    }
+                    if (data.true_home) {
+                        window.location.href = "index.php?page=home";
+                    }
+                // window.location.href = "index.php?page=dashboard";
                    
                 } 
                 //     error: function (error) {

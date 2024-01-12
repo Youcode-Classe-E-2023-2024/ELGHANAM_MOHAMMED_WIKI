@@ -10,7 +10,7 @@
         <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <!-- Favicon -->
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
-    
+
     <title><?= ucfirst($page) ?></title>
     
 </head>
@@ -22,6 +22,10 @@
     </main>
     
     <footer></footer>
+
+
+
+    
     
 </body>
 </html>

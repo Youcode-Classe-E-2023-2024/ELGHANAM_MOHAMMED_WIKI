@@ -46,7 +46,7 @@
     
   </div>
 </div>
-<div id="content"></div>
+
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
@@ -79,7 +79,7 @@ $("#loginForm").submit(function (event) {
                    if (data.passwordError) {
                        $("#passwordError").text(data.passwordError);
                    }
-                   $("#content").html(data);
+                   
                 } 
                 //     error: function (error) {
                 //         console.log("login error:",error);

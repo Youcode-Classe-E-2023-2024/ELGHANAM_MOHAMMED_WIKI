@@ -1,5 +1,5 @@
 <?php
 
 session_destroy();
-header("Location:index.php?page=register");
+header("Location:index.php?page=home");
 ?>

@@ -14,7 +14,7 @@
                 <div class="text-white">
                     <div class="flex p-2  bg-gray-800">
                         <div class="flex py-3 px-2 items-center">
-                            <p class="text-2xl text-green-500 font-semibold">SA</p <p class="ml-2 font-semibold italic">
+                            <p class="text-2xl text-green-500 font-semibold">SA</p class="ml-2 font-semibold italic">
                             DASHBOARD</p>
                         </div>
                     </div>
@@ -22,10 +22,22 @@
                         <div class="">
                             <img class="hidden h-24 w-24 rounded-full sm:block object-cover mr-2 border-4 border-green-400"
                                 src="https://image.flaticon.com/icons/png/512/149/149071.png" alt="">
-                            <p class="font-bold text-base  text-gray-400 pt-2 text-center w-24">Safwan</p>
+                            <p class="font-bold text-base  text-gray-400 py-2 text-center w-24">Safwan</p>
                         </div>
                     </div>
-                    
+
+                    <div class="flex  bg-gray-900 my-2 rounded-xl hover:bg-gray-700">
+                        
+                        <a class="font-bold text-base w-full text-gray-400 p-2 text-center ">Create Ctegory</a>
+                        
+                    </div>
+
+                    <div class="flex  bg-gray-900 my-2 rounded-xl hover:bg-gray-700">
+                        
+                        <a class="font-bold text-base w-full text-gray-400 p-2 text-center ">Create Tags</a>
+                        
+                    </div>
+
                 </div>
             </div>
         </aside>
@@ -56,9 +68,12 @@
                     </div>
 
                     <!-- log out -->
-                    <div class="flex justify-center  mt-2 mr-4">
-                        logout
-                    </div>
+                    <a href="index.php?page=logout" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center gap-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                        log out
+                        <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+                        </svg>
+                    </a>
 
                     
                 </div>
@@ -264,131 +279,6 @@
             </main>
         </div>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
-    <script>
-        function data() {
-          
-            return {
-               
-                isSideMenuOpen: false,
-                toggleSideMenu() {
-                    this.isSideMenuOpen = !this.isSideMenuOpen
-                },
-                closeSideMenu() {
-                    this.isSideMenuOpen = false
-                },
-                isNotificationsMenuOpen: false,
-                toggleNotificationsMenu() {
-                    this.isNotificationsMenuOpen = !this.isNotificationsMenuOpen
-                },
-                closeNotificationsMenu() {
-                    this.isNotificationsMenuOpen = false
-                },
-                isProfileMenuOpen: false,
-                toggleProfileMenu() {
-                    this.isProfileMenuOpen = !this.isProfileMenuOpen
-                },
-                closeProfileMenu() {
-                    this.isProfileMenuOpen = false
-                },
-                isPagesMenuOpen: false,
-                togglePagesMenu() {
-                    this.isPagesMenuOpen = !this.isPagesMenuOpen
-                },
-               
-            }
-        }
-    </script>
-    <script>
-        var chart = document.querySelector('#chartline')
-        var options = {
-            series: [{
-                name: 'TEAM A',
-                type: 'area',
-                data: [44, 55, 31, 47, 31, 43, 26, 41, 31, 47, 33]
-            }, {
-                name: 'TEAM B',
-                type: 'line',
-                data: [55, 69, 45, 61, 43, 54, 37, 52, 44, 61, 43]
-            }],
-            chart: {
-                height: 350,
-                type: 'line',
-                zoom: {
-                    enabled: false
-                }
-            },
-            stroke: {
-                curve: 'smooth'
-            },
-            fill: {
-                type: 'solid',
-                opacity: [0.35, 1],
-            },
-            labels: ['Dec 01', 'Dec 02', 'Dec 03', 'Dec 04', 'Dec 05', 'Dec 06', 'Dec 07', 'Dec 08', 'Dec 09 ',
-                'Dec 10', 'Dec 11'
-            ],
-            markers: {
-                size: 0
-            },
-            yaxis: [{
-                    title: {
-                        text: 'Series A',
-                    },
-                },
-                {
-                    opposite: true,
-                    title: {
-                        text: 'Series B',
-                    },
-                },
-            ],
-            tooltip: {
-                shared: true,
-                intersect: false,
-                y: {
-                    formatter: function(y) {
-                        if (typeof y !== "undefined") {
-                            return y.toFixed(0) + " points";
-                        }
-                        return y;
-                    }
-                }
-            }
-        };
-        var chart = new ApexCharts(chart, options);
-        chart.render();
-    </script>
-    <script>
-        var chart = document.querySelector('#chartpie')
-        var options = {
-            series: [44, 55, 67, 83],
-            chart: {
-                height: 350,
-                type: 'radialBar',
-            },
-            plotOptions: {
-                radialBar: {
-                    dataLabels: {
-                        name: {
-                            fontSize: '22px',
-                        },
-                        value: {
-                            fontSize: '16px',
-                        },
-                        total: {
-                            show: true,
-                            label: 'Total',
-                            formatter: function(w) {
-                                // By default this function returns the average of all series. The below is just an example to show the use of custom formatter function
-                                return 249
-                            }
-                        }
-                    }
-                }
-            },
-            labels: ['Apples', 'Oranges', 'Bananas', 'Berries'],
-        };
-        var chart = new ApexCharts(chart, options);
-        chart.render();
-    </script>
+   
+    
+    

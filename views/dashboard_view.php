@@ -28,13 +28,13 @@
 
                     <div class="flex  bg-gray-900 my-2 rounded-xl hover:bg-gray-700">
                         
-                        <a class="font-bold text-base w-full text-gray-400 p-2 text-center ">Create Ctegory</a>
+                        <p id="popup_category" class="font-bold text-base w-full text-gray-400 p-2 text-center ">Create Ctegory</p>
                         
                     </div>
 
                     <div class="flex  bg-gray-900 my-2 rounded-xl hover:bg-gray-700">
                         
-                        <a class="font-bold text-base w-full text-gray-400 p-2 text-center ">Create Tags</a>
+                        <p id="popup_tags" class="font-bold text-base w-full text-gray-400 p-2 text-center ">Create Tags</p>
                         
                     </div>
 

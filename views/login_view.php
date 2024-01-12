@@ -17,13 +17,13 @@
         <form id="loginForm" class="px-5 py-7">
             <div class="mb-5 flex flex-col">
                 <label class="font-semibold text-sm text-gray-600 pb-1 block">E-mail</label>
-                <input id="email_l" type="text" name="email" class="border rounded-lg px-3 py-2 mt-1  text-sm w-full" placeholder="entre email"/>
+                <input id="email" type="text" name="email" class="border rounded-lg px-3 py-2 mt-1  text-sm w-full" placeholder="entre email"/>
                 <span id="emailError" class="text-red-500 "></span>
             </div>
 
            <div class="mb-5 flex flex-col">
                 <label class="font-semibold text-sm text-gray-600 pb-1 block">Password</label>
-                <input id="password_l" type="text" name="password" class="border rounded-lg px-3 py-2 mt-1  text-sm w-full"  placeholder="••••••••" />
+                <input id="password" type="text" name="password" class="border rounded-lg px-3 py-2 mt-1  text-sm w-full"  placeholder="••••••••" />
                 <span id="passwordError" class="text-red-500 "></span>
             </div>
             <button type="submit" name="send" class="transition duration-200 bg-blue-500 hover:bg-blue-600 focus:bg-blue-700 focus:shadow-sm focus:ring-4 focus:ring-blue-500 focus:ring-opacity-50 text-white w-full py-2.5 rounded-lg text-sm shadow-sm hover:shadow-md font-semibold text-center inline-block">
@@ -46,7 +46,7 @@
     
   </div>
 </div>
-
+<div id="content"></div>
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
@@ -56,31 +56,31 @@
 $(document).ready(function () {   
 $("#loginForm").submit(function (event) {
             event.preventDefault();
-            console.log("hemm");
             // validation login
             var loginForm = {
-                'email_l': $("#email_l").val(),
-                'password_l': $("#password_l").val()
+                'email': $("#email").val(),
+                'password': $("#password").val()
             };
-
-            $.ajax({
-                
+            
+            console.log("hemm");
+            $.ajax({        
                 type: "POST",
                 url: "index.php?page=login",
                 data: loginForm,
                 dataType: "json",
-                success: function (response) {
-                   console.log("frr");
+                success: function (data) {
+                //    console.log(data);
 
-                //    $("#emailError").text('');
-                //    $("#passwordError").text('');
-                //    if (data.emailError) {
-                //        $("#emailError").text(data.emailError);
-                //    }
-                //    if (data.passwordError) {
-                //        $("#passwordError").text(data.passwordError);
-                //    }
-                }
+                   $("#emailError").text('');
+                   $("#passwordError").text('');
+                   if (data.emailError) {
+                       $("#emailError").text(data.emailError);
+                   }
+                   if (data.passwordError) {
+                       $("#passwordError").text(data.passwordError);
+                   }
+                   $("#content").html(data);
+                } 
                 //     error: function (error) {
                 //         console.log("login error:",error);
                 //     }

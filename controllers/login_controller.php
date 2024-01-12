@@ -9,23 +9,47 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST['email'];
     $password = $_POST['password'];
 
-    if (empty($email) || !filter_var($_POST['email_r'], FILTER_VALIDATE_EMAIL)) {
+    if (empty($email) || !filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
         $data['emailError'] = "Please enter email*";
     }
 
-    if (empty($password) || !htmlspecialchars($_POST['first_name'])) {
+    if (empty($password) || !htmlspecialchars($_POST['password'])) {
         $data['passwordError'] = "Please enter password*";
     }
     
-
-
-    // if () {
-    //     $data['passwordError'] = "Password inccorect*";
-    // }
+    
 
     // Send the JSON response
     echo json_encode($data);
+    
+    if (empty($data)) {
+        $objet_login = new LOGIN();
+        $result = $objet_login->SelectUser($email, $password);
+        
+
+
+
+
+        if (!password_verify($password,$result[0]['password']) && $email != $result[0]['email']) {
+            echo "<script> alert('les donnee inccorect')</script>";
+        }elseif ($result[0]['role'] == "admin") {
+            header("location: index.php?page=dashboard");
+            exit();
+        }elseif ($result[0]['role'] == "author") {
+            header("location: index.php?page=home");
+            exit();
+        }
+        
+        // echo "okeyy";
+        // $email = $_POST['email'];
+        // $password = $_POST['password'];
+    }
     exit();
+
+            
+
+
+
 }
 
 

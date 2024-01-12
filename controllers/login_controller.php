@@ -18,13 +18,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
 
     // Send the JSON response
-    echo json_encode($data);
     
     if (empty($data)) {
         $objet_login = new LOGIN();
         $result = $objet_login->SelectUser($email, $password);
         // :dd($result);
-
+        
 
 
 
@@ -32,17 +31,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             echo "<script> alert('les donnee inccorect')</script>";
             exit();
         }elseif ($result[0]['role'] == "admin") {
-            header("location: index.php?page=dashboard");
-            exit();
+            // header("location: index.php?page=dashboard");
+            $data['true_dashboard'] = "true";
+            
         }elseif ($result[0]['role'] == "author") {
-            header("location: index.php?page=home");
-            exit();
+            // header("location: index.php?page=home");
+            $data['true_home'] = "true";
+            
         }
         
         // echo "okeyy";
         // $email = $_POST['email'];
         // $password = $_POST['password'];
     }
+    echo json_encode($data);
     exit();
 
             

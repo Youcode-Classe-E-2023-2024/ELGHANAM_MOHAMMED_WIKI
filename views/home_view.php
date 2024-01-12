@@ -1,13 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <title>HOME</title>
-</head>
-<body class="bg-gray-900">
+
     
 <header class="z-40 py-4  bg-gray-800  ">
                 <div class="flex items-center justify-between h-8 px-6 mx-auto">
@@ -99,15 +90,17 @@
                             <label for="title" class="block text-gray-700 text-sm font-bold mb-2">Title</label>
                             <input type="text" id="title" name="title" placeholder="Enter blog title"
                                 class="w-full px-3 py-2 border rounded-md text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                                <span id="title_error" class="text-red-600">FFFFF</span>
                         </div>
 
                         <div class="mb-4">
                             <label for="description" class="block text-gray-700 text-sm font-bold mb-2">Description</label>
                             <textarea id="description" name="description" rows="4" placeholder="Enter blog description"
                                 class="w-full px-3 py-2 border rounded-md text-gray-700 leading-tight focus:outline-none focus:shadow-outline"></textarea>
+                                <span id="description_error" class="text-red-600">ddddd</span>
                         </div>
 
-                        <button type="button"
+                        <button type="submit"
                             class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
                             Add Blog
                         </button>
@@ -194,7 +187,7 @@
 
 
 
-            <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+       
 
     <script>
         $(document).ready(function () {
@@ -212,6 +205,16 @@
 
         });
 
+        $("#").submit(function (e) { 
+          e.preventDefault();
+
+          // validation form ajout wiki
+
+          var form_data_ajout = {
+            'title': $("#").val,
+            'description': $("#").val
+          }
+        });
 
     //   $(document).ready(function () {
     //     $("#search").keyup(function (e) { 
@@ -233,5 +236,3 @@
     //         });
     //   });
     </script>
-</body>
-</html>

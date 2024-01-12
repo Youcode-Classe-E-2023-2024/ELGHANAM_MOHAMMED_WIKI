@@ -20,7 +20,11 @@ class HOME{
 
         $sql = "INSERT INTO articles (title, content) VALUE (:title, :description)";
         $stmt = $db->prepare($sql);
+        $smt->bindParam(':title', $title);
+        $stmt->bindParam(':description', $description);
+        $stmt->execute();
 
+        return true;
     }
 
 

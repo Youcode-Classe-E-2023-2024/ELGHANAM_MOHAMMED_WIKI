@@ -90,14 +90,14 @@
                             <label for="title" class="block text-gray-700 text-sm font-bold mb-2">Title</label>
                             <input type="text" id="title" name="title" placeholder="Enter blog title"
                                 class="w-full px-3 py-2 border rounded-md text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
-                                <span id="title_error" class="text-red-600">FFFFF</span>
+                                <span id="title_error" class="text-red-600"></span>
                         </div>
 
                         <div class="mb-4">
                             <label for="description" class="block text-gray-700 text-sm font-bold mb-2">Description</label>
                             <textarea id="description" name="description" rows="4" placeholder="Enter blog description"
                                 class="w-full px-3 py-2 border rounded-md text-gray-700 leading-tight focus:outline-none focus:shadow-outline"></textarea>
-                                <span id="description_error" class="text-red-600">ddddd</span>
+                                <span id="description_error" class="text-red-600"></span>
                         </div>
 
                         <button type="submit"
@@ -205,15 +205,35 @@
 
         });
 
-        $("#").submit(function (e) { 
+        $("#blogForm").submit(function (e) { 
           e.preventDefault();
 
           // validation form ajout wiki
 
           var form_data_ajout = {
-            'title': $("#").val,
-            'description': $("#").val
+            'title': $("#title").val(),
+            'description': $("#description").val()
           }
+          console.log("ddd");
+          $.ajax({
+            type: "POST",
+            url: "index.php?page=home",
+            data: form_data_ajout,
+            dataType: "json",
+            success: function (response) {
+              // console.log("vvvvv");
+              $("#title_error").text('');
+              $("#description_error").text('');
+
+              if (response.title_error) {
+                  $("#title_error").text(response.title_error);
+              }
+              if (response.description_error) {
+                  $("#description_error").text(response.description_error);
+              }
+
+            }
+          });
         });
 
     //   $(document).ready(function () {

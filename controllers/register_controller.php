@@ -41,7 +41,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         
         $result = $objet_register->InsertUser($name, $email, $password, $role);
         if ($result) {
-            echo"dakhlat";
+            echo"good inserted";
         }
        
  

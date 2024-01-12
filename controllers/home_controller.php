@@ -16,6 +16,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Send the JSON response
     echo json_encode($response);
+
+
+    if (empty($response)) {
+        $objet_home = new HOME();
+
+        $title = $_POST['title'];
+        $descriptio = $_POST['description'];
+    }
+
     exit();
 }
 

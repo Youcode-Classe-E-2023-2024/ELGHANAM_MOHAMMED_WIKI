@@ -1,4 +1,11 @@
+<?php
+// if ($_SESSION['role'] != "admin") {
+//     header('location: index.php?pagr=home');
+// }
 
+?>
+    
+    
     <div class="flex h-screen bg-gray-800 " :class="{ 'overflow-hidden': isSideMenuOpen }">
 
         <!-- Desktop sidebar -->

@@ -2,8 +2,6 @@
 
 
 
-
-
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $data = array();
     $email = $_POST['email'];
@@ -25,13 +23,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (empty($data)) {
         $objet_login = new LOGIN();
         $result = $objet_login->SelectUser($email, $password);
-        
+        // :dd($result);
 
 
 
 
-        if (!password_verify($password,$result[0]['password']) && $email != $result[0]['email']) {
+        if (!password_verify($password,$result[0]['password']) || $email != $result[0]['email']) {
             echo "<script> alert('les donnee inccorect')</script>";
+            exit();
         }elseif ($result[0]['role'] == "admin") {
             header("location: index.php?page=dashboard");
             exit();

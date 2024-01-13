@@ -31,11 +31,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             echo "<script>alert('les donnee inccorect');</script>";
             exit();
         }elseif ($result[0]['role'] == "admin") {
-            // header("location: index.php?page=dashboard");
             $data['true_dashboard'] = "true";
             
         }elseif ($result[0]['role'] == "author") {
-            // header("location: index.php?page=home");
             $data['true_home'] = "true";
             
         }

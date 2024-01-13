@@ -42,6 +42,27 @@
         return true;
     }
 
+    public function SELECT($sql){
+        global $db;
+         
+        $stmt = $db->prepare($sql);
+        $stmt->execute();
+        $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    
+        return $result;    
+    }
+
+    public function Update($sql){
+        
+    }
+
+    public function SoftDelet($sql){
+        
+    }
+
+    public function Delet($sql){
+
+    }
 
     
 }

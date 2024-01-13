@@ -8,6 +8,7 @@
 // }
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $objet_dashboard = new DASHBOARD();
     $response = array();
     
     if (empty($_POST['category_name']) || !htmlspecialchars($_POST['category_name'])) {
@@ -18,6 +19,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $response['tags_error'] = "please enter name tag*";
     }
 
+    if (empty($response['category_error'])) {
+        $category_name = $_POST['category_name'];
+        $result = $objet_dashboard->InsertCategory($category_name);
+        if ($result) {
+            echo"good inserte category";
+        }
+    }
+    
+    
+    
+    
+    
     echo json_encode($response);
     exit();
 

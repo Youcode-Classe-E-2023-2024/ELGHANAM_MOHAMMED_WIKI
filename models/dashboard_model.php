@@ -1,6 +1,6 @@
 <?php
-// class DASHBOARD{
-//     public $db;
+ class DASHBOARD{
+    public $db;
 
 //     public function select(){
 //         global $db;
@@ -29,8 +29,22 @@
 //         }else {
 //             header('location:index.php?page=dashboard');
 //         }
+
+
+    public function InsertCategory($category_name){
+        global $db;
+
+        $sql = "INSERT INTO categories (name) VALUE (:name)";
+        $stmt = $db->prepare($sql);
+        $stmt->bindParam(':name', $category_name);
+        $stmt->execute();
+
+        return true;
+    }
+
+
     
-//     }
+}
 
     
 

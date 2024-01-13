@@ -7,8 +7,8 @@
 //     $objet_dashboard->delet($user_id);
 // }
 
+$objet_dashboard = new DASHBOARD();
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $objet_dashboard = new DASHBOARD();
     $response = array();
     
     if (empty($_POST['category_name']) || !htmlspecialchars($_POST['category_name'])) {
@@ -36,15 +36,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $response['true'] = "true";
         }
     }
-    
-    
-    
-    
-    
+      
     echo json_encode($response);
     exit();
-
 }
+
+    $sql1 = "SELECT * FROM categories order by create_at desc, edit_at LIMIT 5";
+    $result1 = $objet_dashboard->SELECT($sql1);    
+    // dd($result1[1]);
+
 
 
 ?>

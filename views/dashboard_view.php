@@ -82,10 +82,11 @@
                     <!-- Modal content goes here -->
                     <h2 class="text-2xl font-bold mb-4">Create Category</h2>
                     <form id="createCategoryForm">
-                        <label for="categoryName" class="block text-gray-700 text-sm font-bold mb-2">Category
-                            Name:</label>
-                        <input type="text" id="categoryName" name="categoryName"
-                            class="w-full p-2 border border-gray-300 rounded mb-4">
+                        <div class="mb-4">
+                            <label for="CategoryName" class="block text-gray-700 text-sm font-bold mb-2">Category Name:</label>
+                            <input type="text" id="categoryName" name="categoryName" class="w-full p-2 border border-gray-300 rounded">
+                            <span id="category_error" class="text-red-600">enter category*</span>
+                        </div>
 
                         <button type="submit"
                             class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
@@ -102,12 +103,12 @@
                 <div class="bg-white p-6 rounded-lg shadow-lg">
                     <!-- Modal content goes here -->
                     <h2 class="text-2xl font-bold mb-4">Create Tag</h2>
-                    <form id="createCategoryForm">
-                        <label for="categoryName" class="block text-gray-700 text-sm font-bold mb-2">Tag
-                            Name:</label>
-                        <input type="text" id="categoryName" name="categoryName"
-                            class="w-full p-2 border border-gray-300 rounded mb-4">
-
+                    <form id="CreateTagForm">
+                        <div class="mb-4">
+                            <label for="categoryName" class="block text-gray-700 text-sm font-bold mb-2">Tag Name:</label>
+                            <input type="text" id="categoryName" name="categoryName" class="w-full p-2 border border-gray-300 rounded">
+                            <span id="tags_error" class="text-red-600">enter tag*</span>
+                        </div>
                         <button type="submit"
                             class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
                             Create

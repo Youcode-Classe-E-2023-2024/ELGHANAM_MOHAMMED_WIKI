@@ -42,7 +42,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 
     $sql1 = "SELECT * FROM categories order by create_at desc, edit_at LIMIT 5";
-    $result1 = $objet_dashboard->SELECT($sql1);    
+    $result1 = $objet_dashboard->SELECT($sql1); 
+    $sql2 = "SELECT * FROM tags LIMIT 5";  
+    $result2 = $objet_dashboard->SELECT($sql2); 
     // dd($result1[1]);
 
 

@@ -349,31 +349,48 @@
 
     });
 
-
+    // validation form create category
     $("#CreateCategoryForm").submit(function (e) { 
-          e.preventDefault();
-
-          // validation form create category
-
-          var data_category = {
-            'category_name': $("#category_name").val(),
-          }
-          console.log("ddd");
-          $.ajax({
-            type: "POST",
-            url: "index.php?page=dashboard",
-            data: data_category,
-            dataType: "json",
-            success: function (response) {
-               console.log("vvvvv");
-              $("#category_error").text('');
-              
-              if (response.category_error) {
-                  $("#category_error").text(response.category_error);
-              }
-             
+        e.preventDefault();
+        var data_category = {
+          'category_name': $("#category_name").val(),
+        }
+        
+        $.ajax({
+          type: "POST",
+          url: "index.php?page=dashboard",
+          data: data_category,
+          dataType: "json",
+          success: function (response) {
+            $("#category_error").text('');
+            if (response.category_error) {
+                $("#category_error").text(response.category_error);
             }
-          });
+           
+          }
         });
+    });
+
+
+    // validation form create tag
+    $("#CreateTagsForm").submit(function (e) { 
+      e.preventDefault();
+      var data_tag = {
+        'tag_name': $("#tag_name").val(),
+      }
+      
+      $.ajax({
+        type: "POST",
+        url: "index.php?page=dashboard",
+        data: data_tag,
+        dataType: "json",
+        success: function (response) {    
+          $("#tags_error").text('');    
+          if (response.tags_error) {
+            $("#tags_error").text(response.tags_error);
+          }   
+        }
+      });
+    });
 
 </script>

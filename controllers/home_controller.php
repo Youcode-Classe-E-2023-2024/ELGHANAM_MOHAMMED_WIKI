@@ -1,16 +1,16 @@
 <?php
 
-$objet_home = new HOME();
-$result = $objet_home->select();
+
+// $result = $objet_home->select();
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $response = array();
     
-    if (empty($_POST['title']) || !htmlspecialchars($_POST['first_name'])) {
+    if (empty($_POST['title']) || !htmlspecialchars($_POST['title'])) {
         $response['title_error'] = "Please enter title*";
     }
 
-    if (empty($_POST['description']) || !htmlspecialchars($_POST['password_r'])) {
+    if (empty($_POST['description']) || !htmlspecialchars($_POST['title'])) {
         $response['description_error'] = "Please enter description*";
     }
 

@@ -192,18 +192,19 @@
     <script>
         $(document).ready(function () {
 
-        // Open pop-up
-        $("#openPopup").click(function () {
-            $("#popupContainer").show();
+          // Open pop-up
+          $("#openPopup").click(function () {
+              $("#popupContainer").show();
+          });
+        
+          $("#popupContainer").click(function (event) {
+          if (event.target === this) {
+              $(this).hide();
+          }
+          });
+
         });
 
-        $("#popupContainer").click(function (event) {
-        if (event.target === this) {
-            $(this).hide();
-        }
-        });
-
-        });
 
         $("#blogForm").submit(function (e) { 
           e.preventDefault();

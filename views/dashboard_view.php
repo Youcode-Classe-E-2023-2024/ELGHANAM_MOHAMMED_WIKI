@@ -76,53 +76,43 @@
         </header>
 
         <!-- pop up category -->
-       
-            <!-- ajoute wiki pop up -->
-            <div id="popupContainer_category" class="fixed top-0 left-0 w-full h-full bg-gray-800 bg-opacity-50 pt-14 hidden">
-
-                <div  class="container mx-auto mt-8 p-4 bg-gray-200 shadow-lg max-w-md rounded-md">
-
-                    <h2 class="text-2xl font-bold mb-4 text-center">Create Category</h2>
-                    <form id="CreateCategoryForm">
-
-                        <div class="mb-4">
-                            <label for="title" class="block text-gray-700 text-sm font-bold mb-2">Title</label>
-                            <input type="text" id="title" name="title" placeholder="Enter category title"
-                                class="w-full px-3 py-2 border rounded-md text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
-                                <span id="category_error" class="text-red-600"></span>
-                        </div>
-
-
-                        <button type="submit"
-                            class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
-                            Create Category
-                        </button>
-
-                    </form>
-
-                </div>
-            </div>
-
-        <!-- pop up tags -->
-        <div id="popupContainer_tags" class=" z-50 hidden fixed inset-0 bg-gray-500 bg-opacity-75  p-4">
-            <div  class="flex items-center justify-center min-h-screen">
-                <div class="bg-white p-6 rounded-lg shadow-lg">
-                    <!-- Modal content goes here -->
-                    <h2 class="text-2xl font-bold mb-4">Create Tag</h2>
-                    <form id="CreateTagForm">
-                        <div class="mb-4">
-                            <label for="categoryName" class="block text-gray-700 text-sm font-bold mb-2">Tag Name:</label>
-                            <input type="text" id="categoryName" name="categoryName" class="w-full p-2 border border-gray-300 rounded">
-                            <span id="tags_error" class="text-red-600">enter tag*</span>
-                        </div>
-                        <button type="submit"
-                            class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-                            Create
-                        </button>
-                    </form>
-                </div>
+        <div id="popupContainer_category" class="fixed top-0 left-0 w-full h-full bg-gray-800 bg-opacity-50 pt-14 hidden">
+            <div  class="container mx-auto mt-8 p-4 bg-gray-200 shadow-lg max-w-md rounded-md">
+                <h2 class="text-2xl font-bold mb-4 text-center">Create Category</h2>
+                <form id="CreateCategoryForm">
+                    <div class="mb-4">
+                        <label for="category_name" class="block text-gray-700 text-sm font-bold mb-2">Name Category</label>
+                        <input type="text" id="category_name" name="category_name" placeholder="Enter category name"
+                            class="w-full px-3 py-2 border rounded-md text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                            <span id="category_error" class="text-red-600"></span>
+                    </div>
+                    <button type="submit"
+                        class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+                        Create Category
+                    </button>
+                </form>
             </div>
         </div>
+
+        <!-- pop up tags -->
+        <div id="popupContainer_tags" class="fixed top-0 left-0 w-full h-full bg-gray-800 bg-opacity-50 pt-14 hidden">
+            <div  class="container mx-auto mt-8 p-4 bg-gray-200 shadow-lg max-w-md rounded-md">
+                <h2 class="text-2xl font-bold mb-4 text-center">Create tag</h2>
+                <form id="CreateTagsForm">
+                    <div class="mb-4">
+                        <label for="tag_name" class="block text-gray-700 text-sm font-bold mb-2">Name Tag</label>
+                        <input type="text" id="tag_name" name="tag_name" placeholder="Enter tag name"
+                            class="w-full px-3 py-2 border rounded-md text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                            <span id="tags_error" class="text-red-600"></span>
+                    </div>
+                    <button type="submit"
+                        class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+                        Create Tag
+                    </button>
+                </form>
+            </div>
+        </div>
+
 
         <!-- content -->
         <main class="">
@@ -335,7 +325,7 @@
     
     $(document).ready(function () {
         
-        // Open pop-up
+        // Open pop-up category
         $("#Popup_Category").click(function () {
               $("#popupContainer_category").show();
           });
@@ -351,8 +341,10 @@
         $("#popup_tags").click(function () {
             $("#popupContainer_tags").show();
         });
-        $("#popupContainer_tags").click(function () {
-            $(this).hide();
+        $("#popupContainer_tags").click(function (event) {
+            if (event.target === this) {
+              $(this).hide();
+            }
         });
 
     });

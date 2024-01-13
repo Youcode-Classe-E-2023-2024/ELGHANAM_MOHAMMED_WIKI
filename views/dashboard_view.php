@@ -27,16 +27,13 @@
 
                 <div class="flex  bg-gray-900 my-2 rounded-xl hover:bg-gray-700">
 
-                    <button type="button" id="popup_category"
-                        class="font-bold text-base w-full text-gray-400 p-2 text-center ">Create
-                        Ctegory</button>
+                    <button type="button" id="popup_category" class="font-bold text-base w-full text-gray-400 p-2 text-center ">Create Ctegory</button>
 
                 </div>
 
                 <div class="flex  bg-gray-900 my-2 rounded-xl hover:bg-gray-700">
 
-                    <button type="submit" id="popup_tags"
-                        class="font-bold text-base w-full text-gray-400 p-2 text-center ">Create Tags</button>
+                    <button type="submit" id="popup_tags" class="font-bold text-base w-full text-gray-400 p-2 text-center ">Create Tags</button>
 
                 </div>
 
@@ -86,6 +83,27 @@
                     <h2 class="text-2xl font-bold mb-4">Create Category</h2>
                     <form id="createCategoryForm">
                         <label for="categoryName" class="block text-gray-700 text-sm font-bold mb-2">Category
+                            Name:</label>
+                        <input type="text" id="categoryName" name="categoryName"
+                            class="w-full p-2 border border-gray-300 rounded mb-4">
+
+                        <button type="submit"
+                            class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                            Create
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- pop up tags -->
+        <div id="popupContainer_tags" class=" z-50 hidden fixed inset-0 bg-gray-500 bg-opacity-75  p-4">
+            <div  class="flex items-center justify-center min-h-screen">
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <!-- Modal content goes here -->
+                    <h2 class="text-2xl font-bold mb-4">Create Tag</h2>
+                    <form id="createCategoryForm">
+                        <label for="categoryName" class="block text-gray-700 text-sm font-bold mb-2">Tag
                             Name:</label>
                         <input type="text" id="categoryName" name="categoryName"
                             class="w-full p-2 border border-gray-300 rounded mb-4">
@@ -310,11 +328,19 @@
     
     $(document).ready(function () {
         
-        // Open pop-up
+        // Open pop-up category
         $("#popup_category").click(function () {
             $("#popupContainer_category").show();
         });
         $("#popupContainer_category").click(function () {
+            $(this).hide();
+        });
+
+        // Open pop-up tags
+        $("#popup_tags").click(function () {
+            $("#popupContainer_tags").show();
+        });
+        $("#popupContainer_tags").click(function () {
             $(this).hide();
         });
 

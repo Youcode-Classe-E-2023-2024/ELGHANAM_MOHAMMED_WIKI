@@ -350,30 +350,30 @@
     });
 
 
-    // $("#CreateCategoryForm").submit(function (e) { 
-    //       e.preventDefault();
+    $("#CreateCategoryForm").submit(function (e) { 
+          e.preventDefault();
 
-    //       // validation form create category
+          // validation form create category
 
-    //       var data_category = {
-    //         'categoryName': $("#categoryName").val(),
-    //       }
-    //       console.log("ddd");
-    //       $.ajax({
-    //         type: "POST",
-    //         url: "index.php?page=dashboard",
-    //         data: data_category,
-    //         dataType: "json",
-    //         success: function (response) {
-    //            console.log("vvvvv");
-    //           $("#category_error").text('');
+          var data_category = {
+            'category_name': $("#category_name").val(),
+          }
+          console.log("ddd");
+          $.ajax({
+            type: "POST",
+            url: "index.php?page=dashboard",
+            data: data_category,
+            dataType: "json",
+            success: function (response) {
+               console.log("vvvvv");
+              $("#category_error").text('');
               
-    //           if (response.category_error) {
-    //               $("#category_error").text(response.category_error);
-    //           }
+              if (response.category_error) {
+                  $("#category_error").text(response.category_error);
+              }
              
-    //         }
-    //       });
-    //     });
+            }
+          });
+        });
 
 </script>

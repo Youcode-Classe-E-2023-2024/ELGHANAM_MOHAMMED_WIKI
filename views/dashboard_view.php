@@ -6,10 +6,10 @@
 ?>
 
 
-<div class="flex h-screen bg-gray-800 " :class="{ 'overflow-hidden': isSideMenuOpen }">
+<div class="flex h-screen border-4 border-yellow-400 bg-gray-800 " :class="{ 'overflow-hidden': isSideMenuOpen }">
 
     <!-- Desktop sidebar -->
-    <aside class="z-20 flex-shrink-0 hidden w-60 pl-2 overflow-y-auto bg-gray-800 md:block">
+    <aside class=" flex-shrink-0 hidden w-60 pl-2 overflow-y-auto border border-red-500 bg-gray-800 md:block">
         <div>
             <div class="text-white">
                 <div class="flex p-2  bg-gray-800">
@@ -20,22 +20,23 @@
                 </div>
                 <div class="flex justify-center">
                     <div class="">
-                        <img class="hidden h-24 w-24 rounded-full sm:block object-cover mr-2 border-4 border-green-400"
-                            src="https://image.flaticon.com/icons/png/512/149/149071.png" alt="">
+
                         <p class="font-bold text-base  text-gray-400 py-2 text-center w-24">Safwan</p>
                     </div>
                 </div>
 
                 <div class="flex  bg-gray-900 my-2 rounded-xl hover:bg-gray-700">
 
-                    <button type="submit" id="popup_category" class="font-bold text-base w-full text-gray-400 p-2 text-center ">Create
+                    <button type="button" id="popup_category"
+                        class="font-bold text-base w-full text-gray-400 p-2 text-center ">Create
                         Ctegory</button>
 
                 </div>
 
                 <div class="flex  bg-gray-900 my-2 rounded-xl hover:bg-gray-700">
 
-                    <button type="submit" id="popup_tags" class="font-bold text-base w-full text-gray-400 p-2 text-center ">Create Tags</button>
+                    <button type="submit" id="popup_tags"
+                        class="font-bold text-base w-full text-gray-400 p-2 text-center ">Create Tags</button>
 
                 </div>
 
@@ -44,11 +45,24 @@
     </aside>
 
     <!-- Mobile sidebar -->
+
+
+
+
+
+    <!-- popup category -->
+
+    <!-- Modal -->
+    <!-- <div class=" w-full h-8 bg-blue-700"></div> -->
+
+
+
+
     <!-- Backdrop -->
 
 
-    <div class="flex flex-col flex-1 w-full overflow-y-auto">
-        <header class="z-40 py-4  bg-gray-800  ">
+    <div class="flex flex-col flex-1 w-full overflow-y-auto border-8 border-purple-600 ">
+        <header class=" py-4 border border-yellow-400 bg-gray-800  ">
             <div class="flex items-center justify-between h-8 px-6 mx-auto">
 
 
@@ -83,45 +97,50 @@
             </div>
         </header>
 
+        <div id="popupContainer_category" class=" z-50 hidden fixed inset-0 bg-gray-500 bg-opacity-75  p-4">
+            <div  class="flex items-center justify-center min-h-screen">
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <!-- Modal content goes here -->
+                    <h2 class="text-2xl font-bold mb-4">Create Category</h2>
+                    <form id="createCategoryForm">
+                        <label for="categoryName" class="block text-gray-700 text-sm font-bold mb-2">Category
+                            Name:</label>
+                        <input type="text" id="categoryName" name="categoryName"
+                            class="w-full p-2 border border-gray-300 rounded mb-4">
+
+                        <button type="submit"
+                            class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                            Create
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
         <main class="">
             <div class="grid mb-4 pb-10 px-8 mx-4 rounded-3xl bg-gray-100 border-4 border-red-400">
 
-                <!-- popup category -->
-        
-           <!-- Modal -->
-                <div id="popupContainer_category" class="hidden fixed inset-0 bg-gray-500 bg-opacity-75 overflow-y-auto p-4">
-                    <div class="flex items-center justify-center min-h-screen">
-                          <div class="bg-white p-6 rounded-lg shadow-lg">
-                            <!-- Modal content goes here -->
-                            <h2 class="text-2xl font-bold mb-4">Create Category</h2>
-                            <form id="createCategoryForm">
-                              <label for="categoryName" class="block text-gray-700 text-sm font-bold mb-2">Category Name:</label>
-                              <input type="text" id="categoryName" name="categoryName" class="w-full p-2 border border-gray-300 rounded mb-4" >
 
-                              <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-                                Create
-                              </button>
-                            </form>
-                          </div>
-                    </div>
-                </div>
-  
-            
-            
-            
-            
-            
-            
-            <div class="grid grid-cols-12 gap-6">
+
+
+
+
+
+                <div class="grid grid-cols-12 gap-6">
                     <div class="grid grid-cols-12 col-span-12 gap-6 xxl:col-span-9">
-                        <div class="col-span-12 mt-8">
+
+
+
+
+
+                        <div class="col-span-12 mt-8 -z-50">
                             <div class="flex items-center h-10 intro-y">
                                 <h2 class="mr-5 text-lg font-medium truncate">Dashboard</h2>
                             </div>
-                            <div class="grid grid-cols-12 gap-6 mt-5">
-                                <a class="transform  hover:scale-105 transition duration-300 shadow-xl rounded-lg col-span-12 sm:col-span-6 xl:col-span-3 intro-y bg-white"
+                            <div class="grid grid-cols-12 gap-6 mt-5 ">
+                                <a class="  shadow-xl rounded-lg col-span-12 sm:col-span-6 xl:col-span-3 intro-y bg-white"
                                     href="#">
-                                    <div class="p-5">
+                                    <div class="p-5 ">
                                         <div class="flex justify-between">
                                             <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-blue-400"
                                                 fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -143,7 +162,7 @@
                                     </div>
                                 </a>
 
-                                <a class="transform  hover:scale-105 transition duration-300 shadow-xl rounded-lg col-span-12 sm:col-span-6 xl:col-span-3 intro-y bg-white"
+                                <a class="   shadow-xl rounded-lg col-span-12 sm:col-span-6 xl:col-span-3 intro-y bg-white"
                                     href="#">
                                     <div class="p-5">
                                         <div class="flex justify-between">
@@ -168,7 +187,7 @@
                                         </div>
                                     </div>
                                 </a>
-                                <a class="transform  hover:scale-105 transition duration-300 shadow-xl rounded-lg col-span-12 sm:col-span-6 xl:col-span-3 intro-y bg-white"
+                                <a class=" shadow-xl rounded-lg col-span-12 sm:col-span-6 xl:col-span-3 intro-y bg-white"
                                     href="#">
                                     <div class="p-5">
                                         <div class="flex justify-between">
@@ -310,18 +329,20 @@
 </div>
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <script>
+    console.log('hellooooooo');
     $(document).ready(function () {
         console.log('hello');
-    // Open pop-up
-    $("#popup_category").click(function () {
-        $("#popupContainer_category").show();
-    });
-    $("#popupContainer_category").click(function (event) {
-    if (event.target === this) {
-        $(this).hide();
-    }
-    });
+        // Open pop-up
+        $("#popup_category").click(function () {
+            console.log('ok');
+            $("#popupContainer_category").show();
+        });
+        $("#popupContainer_category").click(function () {
+            $(this).hide();
+        });
+
     });
 
-<script>
+</script>

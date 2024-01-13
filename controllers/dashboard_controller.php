@@ -14,6 +14,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $response['category_error'] = "Please enter name category*";
     }
 
+    echo json_encode($response);
+    exit();
+
 }
 
 

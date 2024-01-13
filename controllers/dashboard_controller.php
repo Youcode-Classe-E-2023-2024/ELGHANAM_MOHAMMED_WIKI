@@ -24,7 +24,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $sql = "INSERT INTO categories (name) VALUE (:name)";
         $result = $objet_dashboard->InsertCategory($sql,$category_name);
         if ($result) {
-            echo"good inserte category";
+            $response['true'] = "true";
         }
     }
 
@@ -33,7 +33,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $sql = "INSERT INTO tags (name) VALUE (:name)";
         $result = $objet_dashboard->InsertCategory($sql,$tag_name);
         if ($result) {
-            echo"good inserte tag";
+            $response['true'] = "true";
         }
     }
     

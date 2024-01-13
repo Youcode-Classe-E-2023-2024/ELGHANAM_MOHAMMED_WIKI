@@ -366,6 +366,10 @@
             if (response.category_error) {
                 $("#category_error").text(response.category_error);
             }
+            if (response.true === "true") {
+                $("#category_name").val('');
+            }
+            
            
           }
         });
@@ -385,10 +389,16 @@
         data: data_tag,
         dataType: "json",
         success: function (response) {    
-          $("#tags_error").text('');    
-          if (response.tags_error) {
-            $("#tags_error").text(response.tags_error);
-          }   
+            $("#tags_error").text('');    
+            if (response.tags_error) {
+              $("#tags_error").text(response.tags_error);
+            }  
+
+            if (response.true === "true") {
+                $("#tag_name").val('');
+            }
+          
+
         }
       });
     });

@@ -10,8 +10,12 @@
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $response = array();
     
-    if (empty($_POST['categoryName']) || !htmlspecialchars($_POST['categoryName'])) {
-        $response['category_error'] = "Please enter name category*";
+    if (empty($_POST['category_name']) || !htmlspecialchars($_POST['category_name'])) {
+        $response['category_error'] = "please enter name category*";
+    }
+
+    if (empty($_POST['tag_name']) || !htmlspecialchars($_POST['tag_name'])) {
+        $response['tags_error'] = "please enter name tag*";
     }
 
     echo json_encode($response);

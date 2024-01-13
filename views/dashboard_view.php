@@ -5,11 +5,11 @@
 
 ?>
 
+<!-- All Page -->
+<div class="flex h-screen bg-gray-800 " :class="{ 'overflow-hidden': isSideMenuOpen }">
 
-<div class="flex h-screen border-4 border-yellow-400 bg-gray-800 " :class="{ 'overflow-hidden': isSideMenuOpen }">
-
-    <!-- Desktop sidebar -->
-    <aside class=" flex-shrink-0 hidden w-60 pl-2 overflow-y-auto border border-red-500 bg-gray-800 md:block">
+    <!-- Left menu -->
+    <aside class=" flex-shrink-0 hidden w-60 pl-2 overflow-y-auto bg-gray-800 md:block">
         <div>
             <div class="text-white">
                 <div class="flex p-2  bg-gray-800">
@@ -44,28 +44,11 @@
         </div>
     </aside>
 
-    <!-- Mobile sidebar -->
+    <div class="flex flex-col flex-1 w-full overflow-y-auto">
 
-
-
-
-
-    <!-- popup category -->
-
-    <!-- Modal -->
-    <!-- <div class=" w-full h-8 bg-blue-700"></div> -->
-
-
-
-
-    <!-- Backdrop -->
-
-
-    <div class="flex flex-col flex-1 w-full overflow-y-auto border-8 border-purple-600 ">
-        <header class=" py-4 border border-yellow-400 bg-gray-800  ">
+        <!-- nav bar -->
+        <header class=" py-4 bg-gray-800  ">
             <div class="flex items-center justify-between h-8 px-6 mx-auto">
-
-
                 <!-- Search Input -->
                 <div class="flex justify-center  mt-2 mr-4">
                     <div class="relative flex w-full flex-wrap items-stretch mb-3">
@@ -92,11 +75,10 @@
                             d="M1 5h12m0 0L9 1m4 4L9 9" />
                     </svg>
                 </a>
-
-
             </div>
         </header>
 
+        <!-- pop up category -->
         <div id="popupContainer_category" class=" z-50 hidden fixed inset-0 bg-gray-500 bg-opacity-75  p-4">
             <div  class="flex items-center justify-center min-h-screen">
                 <div class="bg-white p-6 rounded-lg shadow-lg">
@@ -117,22 +99,14 @@
             </div>
         </div>
 
+        <!-- content -->
         <main class="">
-            <div class="grid mb-4 pb-10 px-8 mx-4 rounded-3xl bg-gray-100 border-4 border-red-400">
-
-
-
-
-
-
+            <div class="grid mb-4 pb-10 px-8 mx-4 rounded-3xl bg-gray-100 border-4 border-blue-900">
 
                 <div class="grid grid-cols-12 gap-6">
                     <div class="grid grid-cols-12 col-span-12 gap-6 xxl:col-span-9">
 
-
-
-
-
+                        <!-- metrise -->
                         <div class="col-span-12 mt-8 -z-50">
                             <div class="flex items-center h-10 intro-y">
                                 <h2 class="mr-5 text-lg font-medium truncate">Dashboard</h2>
@@ -213,6 +187,8 @@
                             </div>
                         </div>
 
+
+                        <!-- table users -->
                         <div class="col-span-12 mt-5">
                             <div class="grid gap-2 grid-cols-1 lg:grid-cols-1">
                                 <div class="bg-white p-4 shadow-lg rounded-lg">
@@ -321,6 +297,7 @@
                                 </div>
                             </div>
                         </div>
+
                     </div>
                 </div>
             </div>
@@ -328,15 +305,13 @@
     </div>
 </div>
 
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
 <script>
-    console.log('hellooooooo');
+    
     $(document).ready(function () {
-        console.log('hello');
+        
         // Open pop-up
         $("#popup_category").click(function () {
-            console.log('ok');
             $("#popupContainer_category").show();
         });
         $("#popupContainer_category").click(function () {

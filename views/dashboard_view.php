@@ -27,7 +27,7 @@
 
                 <div class="flex  bg-gray-900 my-2 rounded-xl hover:bg-gray-700">
 
-                    <button type="button" id="popup_category" class="font-bold text-base w-full text-gray-400 p-2 text-center ">Create Ctegory</button>
+                    <button type="button" id="Popup_Category" class="font-bold text-base w-full text-gray-400 p-2 text-center ">Create Ctegory</button>
 
                 </div>
 
@@ -76,26 +76,32 @@
         </header>
 
         <!-- pop up category -->
-        <div id="popupContainer_category" class=" z-50 hidden fixed inset-0 bg-gray-500 bg-opacity-75  p-4">
-            <div  class="flex items-center justify-center min-h-screen">
-                <div class="bg-white p-6 rounded-lg shadow-lg">
-                    <!-- Modal content goes here -->
-                    <h2 class="text-2xl font-bold mb-4">Create Category</h2>
-                    <form id="createCategoryForm">
+       
+            <!-- ajoute wiki pop up -->
+            <div id="popupContainer_category" class="fixed top-0 left-0 w-full h-full bg-gray-800 bg-opacity-50 pt-14 hidden">
+
+                <div  class="container mx-auto mt-8 p-4 bg-gray-200 shadow-lg max-w-md rounded-md">
+
+                    <h2 class="text-2xl font-bold mb-4 text-center">Create Category</h2>
+                    <form id="CreateCategoryForm">
+
                         <div class="mb-4">
-                            <label for="CategoryName" class="block text-gray-700 text-sm font-bold mb-2">Category Name:</label>
-                            <input type="text" id="categoryName" name="categoryName" class="w-full p-2 border border-gray-300 rounded">
-                            <span id="category_error" class="text-red-600">enter category*</span>
+                            <label for="title" class="block text-gray-700 text-sm font-bold mb-2">Title</label>
+                            <input type="text" id="title" name="title" placeholder="Enter category title"
+                                class="w-full px-3 py-2 border rounded-md text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                                <span id="category_error" class="text-red-600"></span>
                         </div>
 
+
                         <button type="submit"
-                            class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-                            Create
+                            class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+                            Create Category
                         </button>
+
                     </form>
+
                 </div>
             </div>
-        </div>
 
         <!-- pop up tags -->
         <div id="popupContainer_tags" class=" z-50 hidden fixed inset-0 bg-gray-500 bg-opacity-75  p-4">
@@ -329,13 +335,17 @@
     
     $(document).ready(function () {
         
-        // Open pop-up category
-        $("#popup_category").click(function () {
-            $("#popupContainer_category").show();
+        // Open pop-up
+        $("#Popup_Category").click(function () {
+              $("#popupContainer_category").show();
+          });
+        
+          $("#popupContainer_category").click(function (event) {
+          if (event.target === this) {
+              $(this).hide();
+          }
         });
-        $("#popupContainer_category").click(function () {
-            $(this).hide();
-        });
+
 
         // Open pop-up tags
         $("#popup_tags").click(function () {
@@ -346,5 +356,32 @@
         });
 
     });
+
+
+    // $("#CreateCategoryForm").submit(function (e) { 
+    //       e.preventDefault();
+
+    //       // validation form create category
+
+    //       var data_category = {
+    //         'categoryName': $("#categoryName").val(),
+    //       }
+    //       console.log("ddd");
+    //       $.ajax({
+    //         type: "POST",
+    //         url: "index.php?page=dashboard",
+    //         data: data_category,
+    //         dataType: "json",
+    //         success: function (response) {
+    //            console.log("vvvvv");
+    //           $("#category_error").text('');
+              
+    //           if (response.category_error) {
+    //               $("#category_error").text(response.category_error);
+    //           }
+             
+    //         }
+    //       });
+    //     });
 
 </script>

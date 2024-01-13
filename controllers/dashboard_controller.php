@@ -7,7 +7,14 @@
 //     $objet_dashboard->delet($user_id);
 // }
 
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $response = array();
+    
+    if (empty($_POST['categoryName']) || !htmlspecialchars($_POST['categoryName'])) {
+        $response['category_error'] = "Please enter name category*";
+    }
 
+}
 
 
 ?>

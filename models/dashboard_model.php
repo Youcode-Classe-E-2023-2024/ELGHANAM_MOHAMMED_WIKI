@@ -31,10 +31,10 @@
 //         }
 
 
-    public function InsertCategory($category_name){
+    public function InsertCategory($sql,$category_name){
         global $db;
 
-        $sql = "INSERT INTO categories (name) VALUE (:name)";
+        
         $stmt = $db->prepare($sql);
         $stmt->bindParam(':name', $category_name);
         $stmt->execute();

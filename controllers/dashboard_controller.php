@@ -21,9 +21,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if (empty($response['category_error'])) {
         $category_name = $_POST['category_name'];
-        $result = $objet_dashboard->InsertCategory($category_name);
+        $sql = "INSERT INTO categories (name) VALUE (:name)";
+        $result = $objet_dashboard->InsertCategory($sql,$category_name);
         if ($result) {
             echo"good inserte category";
+        }
+    }
+
+    if (empty($response['tags_error'])) {
+        $tag_name = $_POST['tag_name'];
+        $sql = "INSERT INTO tags (name) VALUE (:name)";
+        $result = $objet_dashboard->InsertCategory($sql,$tag_name);
+        if ($result) {
+            echo"good inserte tag";
         }
     }
     

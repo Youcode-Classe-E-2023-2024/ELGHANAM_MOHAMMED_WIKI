@@ -117,7 +117,7 @@
                         <div class="w-full mb-4 flex flex-col">
                         <label for="select-role" class="block text-gray-800 text-sm font-bold mb-2">Tag:</label>
                           <div class="relative flex w-full">
-                            <select id="select-role"  name="roles[]" multiple placeholder="Select roles..." autocomplete="off" class="block w-full rounded-sm cursor-pointer focus:outline-none" multiple>
+                            <select id="select-role"  name="roles" multiple placeholder="Select roles..." autocomplete="off" class="block w-full rounded-sm cursor-pointer focus:outline-none" multiple>
                             <?php  foreach ($result1 as $row1): 
                             ?>
                               <option value="<?= $row1['id']; ?>"><?= $row1['name'];  ?></option>

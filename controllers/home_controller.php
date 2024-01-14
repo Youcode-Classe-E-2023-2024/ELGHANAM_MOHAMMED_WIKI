@@ -34,11 +34,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $status = "published";
         $id_user = $_SESSION['user_id'];
         $id_category = $_POST['category'];
-        $tag_id = $_POST['select_role'];
+        $id_tags = $_POST['select_role'];
 
-        // dd($tag_id);
-        $result2 = $objet_home->InsertArticles($title,$description,$status,$id_user,$id_category);
-        $result4 = $objet_home->InsertArticles_Tag($result2,$tag_id);
+        // dd($id_tags);
+        $id_article = $objet_home->InsertArticles($title,$description,$status,$id_user,$id_category);
+        if (isset($id_tags)) {
+            # code...
+            $result4 = $objet_home->InsertArticles_Tag($id_article,$id_tags);
+        }
         if (!$result4) {
             echo "fff error";
         }

@@ -56,7 +56,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $sql4 = "SELECT * FROM articles";  
     $result4 = $objet_dashboard->SELECT($sql4); 
 
-    // dd($result1[1]);
+    if (isset($_GET['id'])) {
+        $id = $_GET['id'];
+        $table= $_GET['table'];
+        $sql = "DELETE FROM $table WHERE id = :id";
+        $result5 = $objet_dashboard->Delet($sql,$id);
+        header('location: index.php?page=dasboard');
+    }
 
 
 

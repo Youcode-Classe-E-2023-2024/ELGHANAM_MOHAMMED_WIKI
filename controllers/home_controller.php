@@ -53,12 +53,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // select category
     $sql = "SELECT * FROM categories";
     $result = $objet_home->SELECT($sql);
+    $result3 = $objet_home->SELECT($sql);
     // dd($result);
 
     // select tag
     $sql1 = "SELECT * FROM tags";
     $result1 = $objet_home->SELECT($sql1);
-
+    $result4 = $objet_home->SELECT($sql1);
     // select articles
     $sql2 = "SELECT * FROM articles";
     $result2 = $objet_home->SELECT($sql2);

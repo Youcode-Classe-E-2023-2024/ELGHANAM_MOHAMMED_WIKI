@@ -39,39 +39,26 @@
 
             <!-- category -->
             <div class="w-screen h-auto bg-gray-900 md:flex md:flex-col  md:justify-center md:items-center gap-2 p-3">
-            <h1 class="text-white font-bold border border-cyan-800 opacity-25 rounded-xl px-4 py-1 ">CATEGORY</h1>
-            <div class="w-screen h-auto md:flex grid grid-cols-3 md:justify-center md:items-center gap-2 p-3">
-                <a hfer="#" class="w-24 border-2 border-gray-800 h-12 rounded-xl text-white flex justify-center font-bold py-1 items-center">IPHONE</a>
-                <a hfer="#" class="w-24 border-2 border-gray-800 h-12 rounded-xl text-white flex justify-center font-bold py-1 items-center">SAMSUNG</a>
-                <a hfer="#" class="w-24 border-2 border-gray-800 h-12 rounded-xl text-white flex justify-center font-bold py-1 items-center">TESLA</a>
-                <a hfer="#" class="w-24 border-2 border-gray-800 h-12 rounded-xl text-white flex justify-center font-bold py-1 items-center">GOOGLE  </a>
-            </div>
+              <h1 class="text-white font-bold border border-cyan-800 opacity-25 rounded-xl px-4 py-1 ">CATEGORY</h1>
+              <div class="w-screen h-auto md:flex grid grid-cols-3 md:justify-center md:items-center gap-2 p-3">
+              <?php  foreach ($result3 as $row3):
+                               ?>
+                  <a hfer="#" class="w-24 border-2 border-gray-800 h-12 rounded-xl text-white flex justify-center font-bold py-1 items-center"><?= $row3['name'];  ?></a>
+                  <?php endforeach; ?>
+              </div>
             </div>
             
             <!-- tags -->
             <div class="md:flex md:flex-col md:justify-center md:items-center p-4  bg-gray-900">
                 <h1 class="text-white font-bold border border-cyan-800 opacity-25 rounded-xl px-4 py-1">TAGS</h1>
                 <div class="md:flex md:justify-center md:items-center p-4 grid grid-cols-3">
+                <?php  foreach ($result4 as $row4):
+                             ?>
                     <a href="#"
-                        class="bg-green-400 hover:shadow hover:bg-danger transition duration-150 px-2 py-1 rounded text-sm text-white mx-1 my-2">
-                        laravel
+                        class="border-2 border-gray-800 hover:bg-gray-700 px-2 py-1 rounded text-sm text-white mx-1 my-2">
+                        <?= $row4['name'];  ?>
                     </a>
-                    <a href="#"
-                        class="bg-green-400 hover:shadow hover:bg-danger transition duration-150 px-2 py-1 rounded text-sm text-white mx-1 my-2">
-                        livewire
-                    </a>
-                    <a href="#"
-                        class="bg-green-400 hover:shadow hover:bg-danger transition duration-150 px-2 py-1 rounded text-sm text-white mx-1 my-2">
-                        component
-                    </a>
-                    <a href="#"
-                        class="bg-green-400 hover:shadow hover:bg-danger transition duration-150 px-2 py-1 rounded text-sm text-white mx-1 my-2">
-                        snippet
-                    </a>
-                    <a href="#"
-                        class="bg-green-400 hover:shadow hover:bg-danger transition duration-150 px-2 py-1 rounded text-sm text-white mx-1 my-2">
-                        tailwind
-                    </a>
+                <?php endforeach; ?>   
                 </div>
             </div>
 
@@ -147,7 +134,6 @@
 
 
             <!-- display wiki -->
-
             <section class="text-gray-400 bg-gray-900 body-font">
                 <div class="container px-5 py-24 mx-auto ">
                   <div class="flex flex-wrap -m-4 ">

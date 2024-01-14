@@ -37,7 +37,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $tag_id = $_POST['select_role'];
 
         // dd($tag_id);
-        $result = $objet_home->InsertArticles($title,$description,$status,$id_user,$id_category);
+        $result2 = $objet_home->InsertArticles($title,$description,$status,$id_user,$id_category);
+        $result4 = $objet_home->InsertArticles_Tag($result2,$tag_id);
+        if (!$result4) {
+            echo "fff error";
+        }
     }
 
     

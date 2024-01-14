@@ -60,8 +60,14 @@
         
     }
 
-    public function Delet($sql){
+    public function Delet($sql,$id){
+        global $db;
 
+        $stmt = $db->prepare($sql);
+        $stmt->bindParam(':id', $id);
+        $stmt->execute();
+
+        return true;
     }
 
     

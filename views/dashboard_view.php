@@ -505,7 +505,7 @@
                                                                         <td
                                                                             class="px-6 py-4 whitespace-no-wrap text-sm leading-5">
                                                                             <div class="flex space-x-4">
-                                                                                <a href="#"
+                                                                                <a href="index.php?page=dashboard&id=<?= $row['id']; ?>&table=users"
                                                                                     class="text-red-500 hover:text-red-600">
                                                                                     <svg xmlns="http://www.w3.org/2000/svg"
                                                                                         class="w-5 h-5 mr-1 ml-3"
@@ -601,7 +601,7 @@
                                                                         <td
                                                                             class="px-6 py-4 whitespace-no-wrap text-sm leading-5">
                                                                             <div class="flex space-x-4">
-                                                                                <a href="#"
+                                                                                <a href="index.php?page=dashboard&id=<?php echo $row['id']; ?>"
                                                                                     class="text-red-500 hover:text-red-600">
                                                                                     <svg xmlns="http://www.w3.org/2000/svg"
                                                                                         class="w-5 h-5 mr-1 ml-3"

@@ -62,10 +62,10 @@
 
     public function Delet($sql,$id){
         global $db;
-        die ('hello');
-        // $stmt = $db->prepare($sql);
-        // $stmt->bindParam(':id', $id);
-        // $stmt->execute();
+        // die ('hello');
+        $stmt = $db->prepare($sql);
+        $stmt->bindParam(':id', $id);
+        $stmt->execute();
 
         return true;
     }

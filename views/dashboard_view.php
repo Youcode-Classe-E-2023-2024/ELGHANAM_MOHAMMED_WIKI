@@ -328,7 +328,7 @@
                                                                                     </svg>
                                                                                     <p>Edit</p>
                                                                                 </a>
-                                                                                <a href="#"
+                                                                                <a href="index.php?page=dashboard&id=<?= $row['id']; ?>&table=categories"
                                                                                     class="text-red-500 hover:text-red-600">
                                                                                     <svg xmlns="http://www.w3.org/2000/svg"
                                                                                         class="w-5 h-5 mr-1 ml-3"
@@ -418,7 +418,7 @@
                                                                                     </svg>
                                                                                     <p>Edit</p>
                                                                                 </a>
-                                                                                <a href="#"
+                                                                                <a href="index.php?page=dashboard&id=<?= $row['id']; ?>&table=tags"
                                                                                     class="text-red-500 hover:text-red-600">
                                                                                     <svg xmlns="http://www.w3.org/2000/svg"
                                                                                         class="w-5 h-5 mr-1 ml-3"
@@ -601,7 +601,7 @@
                                                                         <td
                                                                             class="px-6 py-4 whitespace-no-wrap text-sm leading-5">
                                                                             <div class="flex space-x-4">
-                                                                                <a href="index.php?page=dashboard&id=<?php echo $row['id']; ?>"
+                                                                                <a href="index.php?page=dashboard&id=<?= $row['id']; ?>&table=articles"
                                                                                     class="text-red-500 hover:text-red-600">
                                                                                     <svg xmlns="http://www.w3.org/2000/svg"
                                                                                         class="w-5 h-5 mr-1 ml-3"

@@ -61,8 +61,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $result1 = $objet_home->SELECT($sql1);
     $result4 = $objet_home->SELECT($sql1);
     // select articles
-    $sql2 = "SELECT * FROM articles";
+    $sql2 = "SELECT * FROM articles WHERE status = $status";
     $result2 = $objet_home->SELECT($sql2);
+
+    if (isset($_GET['id'])) {
+        $id = $_GET['id'];
+        $result = $objet_home->SoftDelet($id);
+    }
 
     // dd($result2);
 

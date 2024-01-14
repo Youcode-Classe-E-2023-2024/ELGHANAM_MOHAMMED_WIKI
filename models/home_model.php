@@ -30,7 +30,7 @@ class HOME{
             $stmt->bindParam(':id_tag', $id_tag);
             $stmt->execute();
         }
-        
+
         return true;
     }
 
@@ -42,6 +42,17 @@ class HOME{
         $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
   
         return $result;
+    }
+
+    public function SoftDelet($id){
+        global $db;
+
+        $sql = "UPDATE articles SET status = 'archived' WHERE id = :id ";
+        $stmt = $db->prepare($sql);
+        $stmt->bindParam(':id', $id);
+        $stmt->execute();
+
+        return true;
     }
 
 

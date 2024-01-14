@@ -99,16 +99,18 @@
                         </div>
 
                         <label for="category" class="block text-gray-800 text-sm font-bold mb-2">Category:</label>
-                        <select id="category" name="category" class="w-full p-2 border rounded mb-4">
-                            <!-- Add options dynamically based on your categories -->
-                            <option value="category1">Category 1</option>
-                            <option value="category2">Category 2</option>
-                            <!-- Add more options as needed -->
+                        <select id="category" name="category" class="w-full p-2 border rounded mb-4" autocomplete="off">
+                          <option value="" disabled selected>Select category...</option>
+                            <?php  foreach ($result as $row):
+                              
+                             ?>
+                            <option value="<?= $row['name']; ?>"><?= $row['name'];  ?></option>
+                            <?php endforeach; ?>
                         </select>
 
 
                         <div class="w-full pb-4">
-                        <label for="category" class="block text-gray-800 text-sm font-bold mb-2">Tag:</label>
+                        <label for="select-role" class="block text-gray-800 text-sm font-bold mb-2">Tag:</label>
                           <div class="relative flex w-full">
                             <select id="select-role"  name="roles[]" multiple placeholder="Select roles..." autocomplete="off" class="block w-full rounded-sm cursor-pointer focus:outline-none" multiple>
                               <option value="1">super admin</option>

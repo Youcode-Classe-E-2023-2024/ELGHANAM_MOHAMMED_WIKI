@@ -1,18 +1,14 @@
 <?php
 class HOME{
     public $db;
-    public function select(){
+    public function SELECT($sql){
         global $db;
-        
-        
-        // $sql = " SELECT * FROM blog ";
-        // $result = mysqli_query($db,$sql);
-
-        // if (!$result) {
-        //     die("error in selecting");
-        // }else {
-        //     return $result;
-        // }
+         
+        $stmt = $db->prepare($sql);
+        $stmt->execute();
+        $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    
+        return $result;    
     }
 
     public function InsertWiki($title, $description){

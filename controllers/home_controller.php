@@ -1,5 +1,5 @@
 <?php
-
+$objet_home = new HOME();
 
 // $result = $objet_home->select();
 
@@ -19,14 +19,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
     if (empty($response)) {
-        $objet_home = new HOME();
-
+        
         $title = $_POST['title'];
         $descriptio = $_POST['description'];
     }
 
     exit();
 }
+
+    $sql = "SELECT * FROM categories";
+    $result = $objet_home->SELECT($sql);
+    // dd($result);
 
 
 

@@ -30,6 +30,7 @@ class HOME{
             $stmt->bindParam(':id_tag', $id_tag);
             $stmt->execute();
         }
+        
         return true;
     }
 

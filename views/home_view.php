@@ -107,10 +107,8 @@
                         </select>
 
 
-                        <div class="w-full">
-                          <label class="inline-block text-sm text-gray-600" for="Multiselect"
-                            >Select multiple roles</label
-                          >
+                        <div class="w-full pb-4">
+                        <label for="category" class="block text-gray-800 text-sm font-bold mb-2">Tag:</label>
                           <div class="relative flex w-full">
                             <select id="select-role"  name="roles[]" multiple placeholder="Select roles..." autocomplete="off" class="block w-full rounded-sm cursor-pointer focus:outline-none" multiple>
                               <option value="1">super admin</option>

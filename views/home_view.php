@@ -75,7 +75,7 @@
                 </div>
             </div>
 
-fghnd_ayi"uqjt_f
+
             <!-- ajoute wiki pop up -->
             <div id="popupContainer" class="fixed top-0 left-0 w-full h-full bg-gray-800 bg-opacity-50 pt-2 hidden">
 
@@ -211,19 +211,19 @@ fghnd_ayi"uqjt_f
                   </div>
                 </div>
             </section>
-g"r-Z6YRH
+
 
             
 
        
 
     <script>
-      console.log('hel');
-        $(document).ready(function () {
-
-          // Open pop-up
-          $("#openPopup").click(function () {
-              // $("#popupContainer").show();
+      $(document).ready(function () {
+        
+        // Open pop-up
+        $("#openPopup").click(function () {
+            console.log('hel');
+              $("#popupContainer").show();
           });
         
           $("#popupContainer").click(function (event) {

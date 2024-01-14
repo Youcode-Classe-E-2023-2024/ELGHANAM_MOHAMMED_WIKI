@@ -36,11 +36,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $id_category = $_POST['category'];
         $tag_id = $_POST['select_role'];
 
-        dd($tag_id);
+        // dd($tag_id);
         $result = $objet_home->InsertArticles($title,$description,$status,$id_user,$id_category);
     }
 
-    exit();
+    
 }
 
     // select category

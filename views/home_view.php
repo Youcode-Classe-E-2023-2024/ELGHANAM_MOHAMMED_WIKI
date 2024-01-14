@@ -77,7 +77,7 @@
 
 
             <!-- ajoute wiki pop up -->
-            <div id="popupContainer" class="fixed top-0 left-0 w-full h-full bg-gray-800 bg-opacity-50 pt-14 hidden">
+            <div id="popupContainer" class="fixed top-0 left-0 w-full h-full bg-gray-800 bg-opacity-50 pt-2 hidden">
 
                 <div  class="container mx-auto mt-8 p-4 bg-gray-200 shadow-lg max-w-md rounded-md">
 
@@ -97,6 +97,30 @@
                                 class="w-full px-3 py-2 border rounded-md text-gray-700 leading-tight focus:outline-none focus:shadow-outline"></textarea>
                                 <span id="description_error" class="text-red-600"></span>
                         </div>
+
+                        <label for="category" class="block text-gray-800 text-sm font-bold mb-2">Category:</label>
+                        <select id="category" name="category" class="w-full p-2 border rounded mb-4">
+                            <!-- Add options dynamically based on your categories -->
+                            <option value="category1">Category 1</option>
+                            <option value="category2">Category 2</option>
+                            <!-- Add more options as needed -->
+                        </select>
+
+
+                        <div class="w-full">
+                          <label class="inline-block text-sm text-gray-600" for="Multiselect"
+                            >Select multiple roles</label
+                          >
+                          <div class="relative flex w-full">
+                            <select id="select-role"  name="roles[]" multiple placeholder="Select roles..." autocomplete="off" class="block w-full rounded-sm cursor-pointer focus:outline-none" multiple>
+                              <option value="1">super admin</option>
+                              <option value="2">admin</option>
+                              <option value="3">writer</option>
+                              <option value="4">user</option>
+                            </select>
+                          </div>
+                        </div>
+        
 
                         <button type="submit"
                             class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
@@ -183,7 +207,12 @@
             </section>
 
 
-
+            <script src="https://cdn.jsdelivr.net/npm/tom-select/dist/js/tom-select.complete.min.js"></script>
+            <script>
+              new TomSelect('#select-role', {
+                maxItems: 3,
+              });
+            </script>
 
        
 

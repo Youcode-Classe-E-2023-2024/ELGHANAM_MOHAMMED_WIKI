@@ -40,16 +40,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     echo json_encode($response);
     exit();
 }
-
+    // read category
     $sql1 = "SELECT * FROM categories order by create_at desc, edit_at LIMIT 5";
     $result1 = $objet_dashboard->SELECT($sql1); 
 
+    // read tags
     $sql2 = "SELECT * FROM tags LIMIT 5";  
     $result2 = $objet_dashboard->SELECT($sql2); 
 
+    // read users
     $sql3 = "SELECT * FROM users";  
     $result3 = $objet_dashboard->SELECT($sql3); 
 
+    // read articles
     $sql4 = "SELECT * FROM articles";  
     $result4 = $objet_dashboard->SELECT($sql4); 
 

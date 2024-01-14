@@ -248,7 +248,7 @@
             'title': $("#title").val(),
             'description': $("#description").val(),
             'category': $("#category").val(),
-            'select_role': $("#select_role").val()
+            'select_role': $("#select-role").val()
           }
           console.log("ddd");
           $.ajax({
@@ -257,7 +257,7 @@
             data: form_data_ajout,
             dataType: "json",
             success: function (response) {
-              // console.log("vvvvv");
+               console.log("vvvvv");
               $("#title_error").text('');
               $("#description_error").text('');
               $("#select_category_error").text('');

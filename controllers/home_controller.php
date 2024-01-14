@@ -18,7 +18,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $response['select_category_error'] = "Please select category*";
     }
 
-    if (empty($_POST['select_role']) || !htmlspecialchars($_POST['select_role'])) {
+    if (empty($_POST['select_role']) ||  in_array('',array_map('htmlspecialchars', $_POST['select_role']))) {
         $response['select_tag_error'] = "Please selct tag*";
     }
 
@@ -30,6 +30,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         
         $title = $_POST['title'];
         $descriptio = $_POST['description'];
+        $category_id = $_POST['category'];
+        $tag_id = $_POST['select_role'];
+        dd($tag_id);
     }
 
     exit();

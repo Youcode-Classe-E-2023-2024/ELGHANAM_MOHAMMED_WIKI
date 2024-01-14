@@ -66,7 +66,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if (isset($_GET['id'])) {
         $id = $_GET['id'];
-        $result = $objet_home->SoftDelet($id);
+        $result = $objet_home->SOFTDELET($id);
     }
 
     // dd($result2);

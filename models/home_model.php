@@ -44,7 +44,7 @@ class HOME{
         return $result;
     }
 
-    public function SoftDelet($id){
+    public function SOFTDELET($id){
         global $db;
 
         $sql = "UPDATE articles SET status = 'archived' WHERE id = :id ";

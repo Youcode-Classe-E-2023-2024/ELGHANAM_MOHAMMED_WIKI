@@ -50,6 +50,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $sql3 = "SELECT * FROM users";  
     $result3 = $objet_dashboard->SELECT($sql3); 
 
+    $sql4 = "SELECT * FROM articles";  
+    $result4 = $objet_dashboard->SELECT($sql4); 
+
     // dd($result1[1]);
 
 

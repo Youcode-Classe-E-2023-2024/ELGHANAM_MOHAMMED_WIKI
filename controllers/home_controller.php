@@ -29,9 +29,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (empty($response)) {
         
         $title = $_POST['title'];
-        $descriptio = $_POST['description'];
-        $category_id = $_POST['category'];
+        $description = $_POST['description'];
+        $status = "published";
+        $id_user = $_SESSION['user_id'];
+        $id_category = $_POST['category'];
         $tag_id = $_POST['select_role'];
+
+        $result = $objet_home->InsertArticles($title,$description,$status,$id_user,$id_category);
         dd($tag_id);
     }
 

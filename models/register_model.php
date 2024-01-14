@@ -15,6 +15,7 @@ class REGISTER{
         $stmt->bindParam(':password', $hach_password);
         $stmt->bindParam(':role', $role);
         $stmt->execute();
+        
 
         return true;
     }

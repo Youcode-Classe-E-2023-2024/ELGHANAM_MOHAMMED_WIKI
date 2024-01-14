@@ -1,10 +1,10 @@
 
     
-<header class="z-40 py-4  bg-gray-800  ">
+              <header class="z-40 py-4  bg-gray-800  ">
                 <div class="flex items-center justify-between h-8 px-6 mx-auto">
                     <!-- Logo -->
                     
-                        <img src="IMAGE/logo.png" width="100" class=" z-30" alt="">
+                        <!-- <img src="IMAGE/logo.png" width="100" class=" z-30" alt=""> -->
                         
                     
                     <!-- Search Input -->
@@ -35,7 +35,7 @@
                    
 
                 </div>
-            </header>
+              </header>
 
             <!-- category -->
             <div class="w-screen h-auto bg-gray-900 md:flex md:flex-col  md:justify-center md:items-center gap-2 p-3">
@@ -75,7 +75,7 @@
                 </div>
             </div>
 
-
+fghnd_ayi"uqjt_f
             <!-- ajoute wiki pop up -->
             <div id="popupContainer" class="fixed top-0 left-0 w-full h-full bg-gray-800 bg-opacity-50 pt-2 hidden">
 
@@ -211,23 +211,19 @@
                   </div>
                 </div>
             </section>
+g"r-Z6YRH
 
-
-            <script src="https://cdn.jsdelivr.net/npm/tom-select/dist/js/tom-select.complete.min.js"></script>
-            <script>
-              new TomSelect('#select-role', {
-                maxItems: 3,
-              });
-            </script>
+            
 
        
 
     <script>
+      console.log('hel');
         $(document).ready(function () {
 
           // Open pop-up
           $("#openPopup").click(function () {
-              $("#popupContainer").show();
+              // $("#popupContainer").show();
           });
         
           $("#popupContainer").click(function (event) {
@@ -300,3 +296,10 @@
     //         });
     //   });
     </script>
+
+<script src="https://cdn.jsdelivr.net/npm/tom-select/dist/js/tom-select.complete.min.js"></script>
+            <script>
+              new TomSelect('#select-role', {
+                maxItems: 3,
+              });
+            </script>

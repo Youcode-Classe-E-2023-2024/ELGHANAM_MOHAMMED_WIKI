@@ -18,6 +18,16 @@ class HOME{
         return $last_id;    
     }
 
+    public function SELECT($sql){
+        global $db;
+
+        $stmt = $db->prepare($sql);
+        $stmt->execute();
+        $result = $stmt->fetch(PDO::FETCH_ASSOC);
+  
+        return $result;
+    }
+
 
 
 

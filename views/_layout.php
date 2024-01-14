@@ -23,7 +23,7 @@
     <title><?= ucfirst($page) ?></title>
     
 </head>
-<body class="bg-gray-900">
+<body >
     
 
     <main>

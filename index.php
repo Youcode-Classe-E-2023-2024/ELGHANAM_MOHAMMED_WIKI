@@ -23,3 +23,6 @@ if (in_array($page . '_controller.php', $all_pages)) {
 } else {
     header('Location: 404.html');
 }
+
+
+?>

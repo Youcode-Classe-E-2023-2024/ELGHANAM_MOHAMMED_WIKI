@@ -104,7 +104,7 @@
                             <?php  foreach ($result as $row):
                               
                              ?>
-                            <option value="<?= $row['name']; ?>"><?= $row['name'];  ?></option>
+                            <option value="<?= $row['id']; ?>"><?= $row['name'];  ?></option>
                             <?php endforeach; ?>
                         </select>
 
@@ -113,10 +113,10 @@
                         <label for="select-role" class="block text-gray-800 text-sm font-bold mb-2">Tag:</label>
                           <div class="relative flex w-full">
                             <select id="select-role"  name="roles[]" multiple placeholder="Select roles..." autocomplete="off" class="block w-full rounded-sm cursor-pointer focus:outline-none" multiple>
-                              <option value="1">super admin</option>
-                              <option value="2">admin</option>
-                              <option value="3">writer</option>
-                              <option value="4">user</option>
+                            <?php  foreach ($result1 as $row1): 
+                            ?>
+                              <option value="<?= $row1['id']; ?>"><?= $row1['name'];  ?></option>
+                            <?php endforeach; ?>
                             </select>
                           </div>
                         </div>

@@ -27,9 +27,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     exit();
 }
 
+    // select category
     $sql = "SELECT * FROM categories";
     $result = $objet_home->SELECT($sql);
     // dd($result);
+
+    // celect tag
+    $sql1 = "SELECT * FROM tags";
+    $result1 = $objet_home->SELECT($sql1);
 
 
 

@@ -1,4 +1,5 @@
 <?php
+
 $objet_home = new HOME();
 
 // $result = $objet_home->select();
@@ -35,8 +36,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $id_category = $_POST['category'];
         $tag_id = $_POST['select_role'];
 
-        $result = $objet_home->InsertArticles($title,$description,$status,$id_user,$id_category);
         dd($tag_id);
+        $result = $objet_home->InsertArticles($title,$description,$status,$id_user,$id_category);
     }
 
     exit();
@@ -61,5 +62,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
 
-?>
+
 

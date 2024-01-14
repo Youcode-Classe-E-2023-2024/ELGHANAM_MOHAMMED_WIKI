@@ -4,7 +4,7 @@
                 <div class="flex items-center justify-between h-8 px-6 mx-auto">
                     <!-- Logo -->
                     
-                        <img src="IMAGE/logo_wiki.png" width="100" class=" z-30" alt="">
+                        <img src="IMAGE/logo.png" width="100" class=" z-30" alt="">
                         
                     
                     <!-- Search Input -->

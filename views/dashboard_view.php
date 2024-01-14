@@ -161,7 +161,7 @@
                                         </div>
                                         <div class="ml-2 w-full flex-1">
                                             <div>
-                                                <div class="mt-3 text-3xl font-bold leading-8">4.510</div>
+                                                <div class="mt-3 text-3xl font-bold leading-8"><?php echo $result5 ?></div>
 
                                                 <div class="mt-1 text-base text-gray-600">Item Sales</div>
                                             </div>
@@ -187,7 +187,7 @@
                                         </div>
                                         <div class="ml-2 w-full flex-1">
                                             <div>
-                                                <div class="mt-3 text-3xl font-bold leading-8">4.510</div>
+                                                <div class="mt-3 text-3xl font-bold leading-8"><?php echo $result6 ?></div>
 
                                                 <div class="mt-1 text-base text-gray-600">Item Sales</div>
                                             </div>
@@ -210,13 +210,14 @@
                                         </div>
                                         <div class="ml-2 w-full flex-1">
                                             <div>
-                                                <div class="mt-3 text-3xl font-bold leading-8">4.510</div>
+                                                <div class="mt-3 text-3xl font-bold leading-8"><?php echo $result7 ?></div>
 
                                                 <div class="mt-1 text-base text-gray-600">Item Sales</div>
                                             </div>
                                         </div>
                                     </div>
                                 </a>
+                                
                             </div>
                         </div>
 
@@ -295,6 +296,7 @@
                                                                         <td
                                                                             class="px-6 py-4 whitespace-no-wrap text-sm leading-5">
                                                                             <div class="flex space-x-4">
+                                                                                
                                                                                 <a id="popup_edit_category"
                                                                                     class="text-blue-500 hover:text-blue-600">
                                                                                     <svg xmlns="http://www.w3.org/2000/svg"

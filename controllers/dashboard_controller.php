@@ -36,6 +36,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $response['true'] = "true";
         }
     }
+
+    if (isset($_GET['category_id'])) {
+        $id = $_GET['category_id'];
+    }
       
     echo json_encode($response);
     exit();
@@ -65,6 +69,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         header('location: index.php?page=dashboard');
     }
 
+
+    $sql5 = "SELECT * FROM articles";
+    $result5 = $objet_dashboard->RowCount($sql5);
+    
+    $sql6 = "SELECT * FROM users";
+    $result6 = $objet_dashboard->RowCount($sql6);
+
+    $sql7 = "SELECT * FROM tags";
+    $result7 = $objet_dashboard->RowCount($sql7); 
 
 
 ?>

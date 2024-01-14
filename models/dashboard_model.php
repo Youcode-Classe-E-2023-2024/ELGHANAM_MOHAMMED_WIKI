@@ -70,6 +70,16 @@
         return true;
     }
 
+    public function RowCount($sql){
+        global $db;
+
+        $stmt = $db->prepare($sql);
+        $stmt->execute();
+        $nember_row = $stmt->rowCount();
+
+        return $nember_row;            
+    }
+
     
 }
 

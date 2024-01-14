@@ -22,7 +22,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (empty($data)) {
         $objet_login = new LOGIN();
         $result = $objet_login->SelectUser($email, $password);
-        // :dd($result);
+        $_SESSION['user_id'] = $result[0]['id'];
+        //  dd($result);
         
 
 

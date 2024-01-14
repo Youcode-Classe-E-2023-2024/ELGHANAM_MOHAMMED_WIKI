@@ -18,13 +18,7 @@
                         DASHBOARD</p>
                     </div>
                 </div>
-                <div class="flex justify-center">
-                    <div class="">
-
-                        <p class="font-bold text-base  text-gray-400 py-2 text-center w-24">Safwan</p>
-                    </div>
-                </div>
-
+                
                 <div class="flex  bg-gray-900 my-2 rounded-xl hover:bg-gray-700">
 
                     <button type="button" id="Popup_Category" class="font-bold text-base w-full text-gray-400 p-2 text-center ">Create Ctegory</button>
@@ -44,24 +38,10 @@
     <div class="flex flex-col flex-1 w-full overflow-y-auto">
 
         <!-- nav bar -->
-        <header class=" py-4 bg-gray-800 ">
-            <div class="flex items-center justify-between h-8 px-6 mx-auto">
-                <!-- Search Input -->
-                <div class="flex justify-center  mt-2 mr-4">
-                    <div class="relative flex w-full flex-wrap items-stretch mb-3">
-                        <input type="search" placeholder="Search" {{ $attributes }}
-                            class="form-input px-3 py-2 placeholder-gray-400 text-gray-700 relative bg-white rounded-lg text-sm shadow outline-none focus:outline-none focus:shadow-outline w-full pr-10" />
-                        <span
-                            class="z-10 h-full leading-snug font-normal  text-center text-gray-400 absolute bg-transparent rounded text-base items-center justify-center w-8 right-0 pr-3 py-3">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 -mt-1" fill="none"
-                                viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                            </svg>
-                        </span>
-                    </div>
-                </div>
-
+        <header class=" w-full h-20 py-4 bg-gray-800 ">
+            <div class="flex items-center justify-end h-8 px-6 mx-auto">
+                
+                
                 <!-- log out -->
                 <a href="index.php?page=logout"
                     class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center gap-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
@@ -390,7 +370,7 @@
                                                                     </th>
                                                                 </tr>
                                                             </thead>
-                                                            <tbody class="bg-white divide-y divide-gray-200">
+                                                            <tbody id="display_tag" class="bg-white divide-y divide-gray-200">
                                                                 <?php foreach ($result2 as $row) { ?>
                                                                     <tr>
                                                                         <td
@@ -642,6 +622,21 @@
 
 
 <script>
+
+    // setInterval(function() {
+    //         $(document).ready(function(){
+            
+    //             $.ajax({
+    //                 "type":"GET",
+    //                 "url":"index.php?page=dashboard",
+    //                 success:function(data){
+    //                     $("#display_tag").html(data);
+    //                 }
+    //             });
+            
+    //     });
+    // },1);
+
     
     $(document).ready(function () {
         

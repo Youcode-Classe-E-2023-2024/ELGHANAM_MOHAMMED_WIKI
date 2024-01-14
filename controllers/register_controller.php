@@ -40,6 +40,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $_SESSION['role'] = $role; 
         
         $result = $objet_register->InsertUser($name, $email, $password, $role);
+        // dd($result);
         if ($result) {
             header('location: index.php?page=login');
         }

@@ -15,10 +15,5 @@ class LOGIN{
         return $result;
     }
 
-    public function lastInsertId(){
-        global $db;
-        $last_id = $this->db->lastInsertId();
-        
-        return $last_id;
-    }
+    
 }

@@ -1,29 +1,27 @@
 <?php
 class HOME{
     public $db;
-    public function SELECT($sql){
-        global $db;
-         
-        $stmt = $db->prepare($sql);
-        $stmt->execute();
-        $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
     
-        return $result;    
-    }
-
-    public function Insert($title, $descripti){
+    public function InsertArticles($title,$description,$status,$id_user,$id_category){
         global $db;
-
-        $sql = "INSERT INTO articles (title, content) VALUE (:title, :description)";
+        
+        $sql = "INSERT INTO articles (title, content, status, id_user, id_category) VALUE (:title, :description, :status, :id_user, :id_category)";
         $stmt = $db->prepare($sql);
-        $smt->bindParam(':title', $title);
+        $stmt->bindParam(':title', $title);
         $stmt->bindParam(':description', $description);
+        $stmt->bindParam(':status', $status);
+        $stmt->bindParam(':id_user', $id_user);
+        $stmt->bindParam(':id_category', $id_category);
         $stmt->execute();
-
-        return true;
+        $last_id = $stmt->lastInsertId();
+    
+        return $last_id;    
     }
 
 
+
+
+   
 
 
 }

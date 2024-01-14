@@ -22,8 +22,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (empty($data)) {
         $objet_login = new LOGIN();
         $result = $objet_login->SelectUser($email, $password);
-        $_SESSION['user_id'] = $result[0]['id'];
-        //  dd($result);
+        $_SESSION['user_id'] = $result['id'];
+        //    dd($result['role']);
         
 
 
@@ -31,10 +31,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if (!password_verify($password,$result[0]['password']) || $email != $result[0]['email']) {
             echo "<script>alert('les donnee inccorect');</script>";
             exit();
-        }elseif ($result[0]['role'] == "admin") {
+        }elseif ($result['role'] == "admin") {
             $data['true_dashboard'] = "true";
             
-        }elseif ($result[0]['role'] == "author") {
+        }elseif ($result['role'] == "author") {
             $data['true_home'] = "true";
             
         }

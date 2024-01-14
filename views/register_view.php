@@ -69,6 +69,10 @@
                 dataType: "json", 
                 success: function (response) {
                   
+                    $("#first_name").val(''),
+                    $("#email_r").val(''),
+                    $("#password_r").val('')
+                    
                     $("#error_name").text('');
                     $("#error_email").text('');
                     $("#error_pass").text('');
@@ -84,9 +88,7 @@
                         $("#error_pass").text(response.error_password);
                     }
 
-                    $("#first_name").val(''),
-                    $("#email_r").val(''),
-                    $("#password_r").val('')
+                    
                     
                 },
                 error: function (error) {

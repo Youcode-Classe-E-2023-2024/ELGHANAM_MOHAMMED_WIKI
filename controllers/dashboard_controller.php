@@ -61,7 +61,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $table= $_GET['table'];
         $sql = "DELETE FROM $table WHERE id = :id";
         $result5 = $objet_dashboard->Delet($sql,$id);
-        header('location: index.php?page=dasboard');
+        header('location: index.php?page=dashboard');
     }
 
 

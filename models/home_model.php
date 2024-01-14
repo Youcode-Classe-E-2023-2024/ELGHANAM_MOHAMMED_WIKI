@@ -11,7 +11,7 @@ class HOME{
         return $result;    
     }
 
-    public function InsertWiki($title, $description){
+    public function Insert($title, $descripti){
         global $db;
 
         $sql = "INSERT INTO articles (title, content) VALUE (:title, :description)";

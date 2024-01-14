@@ -113,6 +113,25 @@
             </div>
         </div>
 
+        <!-- pop up edit -->
+        <div id="popupContainer_edit_category" class="fixed top-0 left-0 w-full h-full bg-gray-800 bg-opacity-50 pt-14 hidden">
+            <div  class="container mx-auto mt-8 p-4 bg-gray-200 shadow-lg max-w-md rounded-md">
+                <h2 class="text-2xl font-bold mb-4 text-center">Edit Category</h2>
+                <form id="EditCategoryForm">
+                    <div class="mb-4">
+                        <label for="edit_name" class="block text-gray-700 text-sm font-bold mb-2">Name Category</label>
+                        <input type="text" id="edit_name" name="edit_name" placeholder="Enter category name"
+                            class="w-full px-3 py-2 border rounded-md text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                            <span id="edit_error" class="text-red-600"></span>
+                    </div>
+                    <button type="submit"
+                        class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+                        Edit Category
+                    </button>
+                </form>
+            </div>
+        </div>
+
 
         <!-- content -->
         <main class="">
@@ -277,7 +296,7 @@
                                                                         <td
                                                                             class="px-6 py-4 whitespace-no-wrap text-sm leading-5">
                                                                             <div class="flex space-x-4">
-                                                                                <a href="#"
+                                                                                <a id="popup_edit_category"
                                                                                     class="text-blue-500 hover:text-blue-600">
                                                                                     <svg xmlns="http://www.w3.org/2000/svg"
                                                                                         class="w-5 h-5 mr-1" fill="none"
@@ -650,6 +669,16 @@
             $("#popupContainer_tags").show();
         });
         $("#popupContainer_tags").click(function (event) {
+            if (event.target === this) {
+              $(this).hide();
+            }
+        });
+
+        // Open pop-up edit category
+        $("#popup_edit_category").click(function () {
+            $("#popupContainer_edit_category").show();
+        });
+        $("#popupContainer_edit_category").click(function (event) {
             if (event.target === this) {
               $(this).hide();
             }

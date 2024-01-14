@@ -100,7 +100,7 @@
                 <form id="EditCategoryForm">
                     <div class="mb-4">
                         <label for="edit_name" class="block text-gray-700 text-sm font-bold mb-2">Name Category</label>
-                        <input type="text" id="edit_name" name="edit_name" placeholder="Enter category name"
+                        <input type="text" id="edit_name" name="edit_category_name" placeholder="Enter category name"
                             class="w-full px-3 py-2 border rounded-md text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
                             <span id="edit_category_error" class="text-red-600"></span>
                     </div>
@@ -711,6 +711,8 @@
     });
 
 
+
+
     // validation form create tag
     $("#CreateTagsForm").submit(function (e) { 
       e.preventDefault();
@@ -737,6 +739,32 @@
         }
       });
     });
+
+    // validation form edit category
+    $("#EditCategoryForm").submit(function (e) { 
+        e.preventDefault();
+        var data_edit_category = {
+          'category_name': $("#edit_category_name").val(),
+        }
+        
+        $.ajax({
+          type: "POST",
+          url: "index.php?page=dashboard",
+          data: data_edit_category,
+          dataType: "json",
+          success: function (response) {
+            $("#edit_category_error").text('');
+            if (response.category_error) {
+                $("#edit_category_error").text(response.category_error);
+            }
+            if (response.true === "true") {
+                $("#category_name").val('');
+            }
+            
+           
+          }
+        });
     });
+});
 
 </script>

@@ -19,15 +19,17 @@ class HOME{
         return $last_id;    
     }
 
-    public function InsertArticles_Tag($id_article,$id_tag){
+    public function InsertArticles_Tag($id_article,$id_tags){
         global $db;
 
         $sql = "INSERT INTO articles_tags (id_article,id_tag) VALUE (:id_article, :id_tag)";
         $stmt = $db->prepare($sql);
-        $stmt->bindParam(':id_article', $id_article);
-        $stmt->bindParam(':id_tag', $id_tag);
-        $stmt->execute();
 
+        foreach ($id_tags as $id_tag) {
+            $stmt->bindParam(':id_article', $id_article);
+            $stmt->bindParam(':id_tag', $id_tag);
+            $stmt->execute();
+        }
         return true;
     }
 

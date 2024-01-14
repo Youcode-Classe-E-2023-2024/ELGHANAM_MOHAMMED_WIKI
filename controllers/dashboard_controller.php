@@ -51,6 +51,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // read users
     $sql3 = "SELECT * FROM users";  
     $result3 = $objet_dashboard->SELECT($sql3); 
+    
 
     // read articles
     $sql4 = "SELECT * FROM articles";  

@@ -10,7 +10,7 @@ class LOGIN{
         $stmt = $db->prepare($sql);
         $stmt->bindParam(':email', $email);
         $stmt->execute();
-        $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $result = $stmt->fetch(PDO::FETCH_ASSOC);
   
         return $result;
     }

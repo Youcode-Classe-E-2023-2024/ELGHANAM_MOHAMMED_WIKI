@@ -55,9 +55,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $result = $objet_home->SELECT($sql);
     // dd($result);
 
-    // celect tag
+    // select tag
     $sql1 = "SELECT * FROM tags";
     $result1 = $objet_home->SELECT($sql1);
+
+    // select articles
+    $sql2 = "SELECT * FROM articles";
+    $result2 = $objet_home->SELECT($sql2);
+
+    // dd($result2);
 
 
 

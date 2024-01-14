@@ -98,18 +98,23 @@
                                 <span id="description_error" class="text-red-600"></span>
                         </div>
 
+
+                        <!-- select category -->
+                        <div class="mb-4">
                         <label for="category" class="block text-gray-800 text-sm font-bold mb-2">Category:</label>
-                        <select id="category" name="category" class="w-full p-2 border rounded mb-4" autocomplete="off">
+                        <select id="category" name="category" class="w-full p-2 border rounded " autocomplete="off">
                           <option value="" disabled selected>Select category...</option>
                             <?php  foreach ($result as $row):
-                              
                              ?>
                             <option value="<?= $row['id']; ?>"><?= $row['name'];  ?></option>
                             <?php endforeach; ?>
                         </select>
+                        <span id="select_category_error" class="text-red-600"></span>
+                        </div>
 
 
-                        <div class="w-full pb-4">
+                        <!-- select tag -->
+                        <div class="w-full mb-4 flex flex-col">
                         <label for="select-role" class="block text-gray-800 text-sm font-bold mb-2">Tag:</label>
                           <div class="relative flex w-full">
                             <select id="select-role"  name="roles[]" multiple placeholder="Select roles..." autocomplete="off" class="block w-full rounded-sm cursor-pointer focus:outline-none" multiple>
@@ -119,6 +124,7 @@
                             <?php endforeach; ?>
                             </select>
                           </div>
+                          <span id="select_tag_error" class="text-red-600"></span>
                         </div>
         
 
@@ -240,7 +246,9 @@
 
           var form_data_ajout = {
             'title': $("#title").val(),
-            'description': $("#description").val()
+            'description': $("#description").val(),
+            'category': $("#category").val(),
+            'select_role': $("#select_role").val()
           }
           console.log("ddd");
           $.ajax({
@@ -252,12 +260,20 @@
               // console.log("vvvvv");
               $("#title_error").text('');
               $("#description_error").text('');
+              $("#select_category_error").text('');
+              $("#select_tag_error").text('');
 
               if (response.title_error) {
                   $("#title_error").text(response.title_error);
               }
               if (response.description_error) {
                   $("#description_error").text(response.description_error);
+              }
+              if (response.select_category_error) {
+                  $("#select_category_error").text(response.select_category_error);
+              }
+              if (response.select_tag_error) {
+                  $("#select_tag_error").text(response.select_tag_error);
               }
 
             }

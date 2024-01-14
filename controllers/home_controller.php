@@ -14,6 +14,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $response['description_error'] = "Please enter description*";
     }
 
+    if (empty($_POST['category']) || !htmlspecialchars($_POST['category'])) {
+        $response['select_category_error'] = "Please select category*";
+    }
+
+    if (empty($_POST['select_role']) || !htmlspecialchars($_POST['select_role'])) {
+        $response['select_tag_error'] = "Please selct tag*";
+    }
+
     // Send the JSON response
     echo json_encode($response);
 
